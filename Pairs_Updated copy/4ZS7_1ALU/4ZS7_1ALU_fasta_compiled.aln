@@ -1,0 +1,14 @@
+CLUSTAL 2.1 multiple sequence alignment
+
+
+4ZS7            ----ERIDKQIRYILDGISALRKETCNKSN-----NLPKMAEKDGCFQSGFNEETCLVKI
+1ALU            LTSSERIDKQIRYILDGISALRKETCNKSNMCENLNLPKMAEKDGCFQSGFNEETCLVKI
+                    **************************     *************************
+
+4ZS7            ITGLLEFEVYLEYLQNRFESSEEQARAVQMSTKVLIQFLQKKAKNLD-----DPTTNASL
+1ALU            ITGLLEFEVYLEYLQNRFESSEEQARAVQMSTKVLIQFLQKKAKNLDAITTPDPTTNASL
+                ***********************************************     ********
+
+4ZS7            LTKLQ----WLQDMTTHLILRSFKEFLQSSLRALRQM
+1ALU            LTKLQAQNQWLQDMTTHLILRSFKEFLQSSLRALRQM
+                *****    ****************************

@@ -1,0 +1,26 @@
+CLUSTAL 2.1 multiple sequence alignment
+
+
+4YDJ            VWKDADTTLFCASDAKAHETEVHNVWATHACVPTDPNPQEIHLENVTENFNMWKNNMVEQ
+3TGT            VWKDADTTLFCASDAKAHETEVHNVWATHACVPTDPNPQEIHLENVTENFNMWKNNMVEQ
+                ************************************************************
+
+4YDJ            MQEDVISLWD-----------------------FDPIPIHYCTPAGYVILKCNDKNFNGT
+3TGT            MQEDVISLWDQSLQPCVKLTGGSVIKQACPKISFDPIPIHYCTPAGYVILKCNDKNFNGT
+                **********                       ***************************
+
+4YDJ            GPCKNVSSVQCTHGIKPVVSTQLLLNGSLAEEEIIIRSENLTNNAKTIIVHLNKSVEINC
+3TGT            GPCKNVSSVQCTHGIKPVVSTQLLLNGSLAEEEIIIRSENLTNNAKTIIVHLNKSVEINC
+                ************************************************************
+
+4YDJ            TRP-----RKAYCEINGTKWNKVLKQVTEKLKEHFNNKTIIFQPPSGGDLEITMHHFNCR
+3TGT            TRPSNGDIRKAYCEINGTKWNKVLKQVTEKLKEHFNNKTIIFQPPSGGDLEITMHHFNCR
+                ***     ****************************************************
+
+4YDJ            GEFFYCNTTQLFNNTCIGMKGCNGTITLPCKIKQIG-----------------KINCVSN
+3TGT            GEFFYCNTTQLFNNTCI--KGCNGTITLPCKIKQIINMWQGTGQAMYAPPIDGKINCVSN
+                *****************  ****************                  *******
+
+4YDJ            ITGILLTRDGGANNTSNETFRPGGGNIKDNWRSELYKYKVVQI-
+3TGT            ITGILLTRDGGANNTSNETFRPGGGNIKDNWRSELYKYKVVQIE
+                ******************************************* 

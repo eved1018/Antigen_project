@@ -1,0 +1,14 @@
+CLUSTAL 2.1 multiple sequence alignment
+
+
+1LK3            ---NMLRDLRDAFSRVKTFFQMKDQLDNLLLKESLLEDFKGYLGCQALSEMIQFYLEEVM
+1INR            NLPNMLRDLRDAFSRVKTFF-------NLLLKESLLEDFKGYLGCQALSEMIQFYLEEVM
+                   *****************       *********************************
+
+1LK3            PQAENQDPDIKAHVNSLGENLKTLRLRLRRCHRFLPCE-KSKAVEQVKNAFNKLQEKGIY
+1INR            PQAENQDPDIKAHVNSLGENLKTLRLRLR---RFLPCENKSKAVEQVKNAFNKLQEKGIY
+                *****************************   ****** *********************
+
+1LK3            KAMSEFDIFINYIEAYMTMK--
+1INR            KAMSEFDIFINYIEAYMTMKIR
+                ********************  
