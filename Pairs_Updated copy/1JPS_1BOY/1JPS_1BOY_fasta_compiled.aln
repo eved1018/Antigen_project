@@ -1,0 +1,18 @@
+CLUSTAL 2.1 multiple sequence alignment
+
+
+1JPS            --NTVAAYNLTWKSTNFKTILEWEPKPVNQVYTVQISTKSGDWKSKCFYTTDTECDLTDE
+1BOY            TTNTVAAYNLTWKSTNFKTILEWEPKPVNQVYTVQISTKSGDWKSKCFYTTDTECDLTDE
+                  **********************************************************
+
+1JPS            IVKDVKQTYLARVFSYPAGNVE-------PLYENSPEFTPYLETNLGQPTIQSFEQVGTK
+1BOY            IVKDVKQTYLARVFSYPAGNVESTGSAGEPLYENSPEFTPYLETNLGQPTIQSFEQVGTK
+                **********************       *******************************
+
+1JPS            VNVTVEDERTLVRRNNTFLSLRDVFGKDLIYTLYYWKSSSSGKKTAKTNTNEFLIDVDKG
+1BOY            VNVTVEDERTLVRRNNTFLSLRDVFGKDLIYTLYYWKSSSSGKKTAKTNTNEFLIDVDKG
+                ************************************************************
+
+1JPS            ENYCFSVQAVIPSRTVNRKSTDSPVECMG--
+1BOY            ENYCFSVQAVIPSRTVNRKSTDSPVECMGQE
+                *****************************  

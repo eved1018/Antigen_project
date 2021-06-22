@@ -1,0 +1,18 @@
+CLUSTAL 2.1 multiple sequence alignment
+
+
+2XRA            -QLLSGIVQQQNNLLRAIEAQQHLLQLTVWGIKQLQARILAGGTTWMEWDREINNYTSLI
+5KA6            MQLLSGIVQQRNNMLRAIEAQQHLLQLTVWGIKQLQARILGGHTTWMEWDREINNYTSLI
+                 *********:**:**************************.* *****************
+
+2XRA            HSLIEESQNQQEKNEQELLEGSGGQLLSGIVQQQNNLLRAIEAQQHLLQLTVWGIKQLQA
+5KA6            HSLIEESQNQQEKNEQELL-----------------------------------------
+                *******************                                         
+
+2XRA            RILGHTTWMEWDREINNYTSLIHSLIEESQNQQEKNEQELLEGSQLLSGIVQQQNNLLRA
+5KA6            ------------------------------------------------------------
+                                                                            
+
+2XRA            IEAQQHLLQLTVWGIKQLQARILA
+5KA6            ------------------------
+                                        

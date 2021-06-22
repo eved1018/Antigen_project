@@ -1,0 +1,30 @@
+CLUSTAL 2.1 multiple sequence alignment
+
+
+3T2N            QEPLYPVQVSSADARLMVFDKTEGTWRLLCSSRSNARVAGLSCEEMGFLRALTHSELDVR
+5CE1            -EPLYPVQVSSADARLMVFDKTEGTWRLLCSSRSNARVAGLSCEEMGFLRALTHSELDVR
+                 ***********************************************************
+
+3T2N            TAGANGTSGFFCVDEGRLPHTQRLLEVISVCDCPRGRFLAAICQDCGRRKLP---RDTSL
+5CE1            TAGANGTSGFFCVDEGRLPHTQRLLEVISVCDCPRGRFLAAICQDCGRRKLIVGGRDTSL
+                ***************************************************    *****
+
+3T2N            GRWPWQVSLRYDGAHLCGGSLLSGDWVLTAAHCFPERNRVLSRWRVFAGAVAQASPHGLQ
+5CE1            GRWPWQVSLRYDGAHLCGGSLLSGDWVLTAAHCFPERNRVLSRWRVFAGAVAQAS--GLQ
+                *******************************************************  ***
+
+3T2N            LGVQAVVYHGGYLPFRDPNSEENSNDIALVHLSSPLPLTEYIQPVCLPAAGQALVDGKIC
+5CE1            LGVQAVVYHGGYLPFR-PNSE-NSNDIALVHLSSPLPLTEYIQPVCLPAAGQALVDGKIC
+                **************** **** **************************************
+
+3T2N            TVTGWG----------VLQEARVPIISNDVCNGADFYGNQIKPKMFCAGYP--------G
+5CE1            TVTGWGNTQYYGQQAGVLQEARVPIISNDVCNGADFYGNQIKPKMFCAGYPEGGIDACQG
+                ******          ***********************************        *
+
+3T2N            DSGGPFVCEDSISRTPRWRLCGIVS------LAQKPGVYTKVSDFREWIFQAIKTHSEAS
+5CE1            DSGGPFVCEDSISRTPRWRLCGIVSWGTGCALAQKPGVYTKVSDFREWIFQAIKTHSEAS
+                *************************      *****************************
+
+3T2N            GMVTQL
+5CE1            GMVTQL
+                ******

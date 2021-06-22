@@ -1,0 +1,14 @@
+CLUSTAL 2.1 multiple sequence alignment
+
+
+5LQB            STKKTQLQLEHLLLDLQMILNGINNYKNPKLTRMLTFKFYMPKKATELKHLQCLEEELKP
+1M4C            STKKTQLQLEHLLLDLQMILNGINNYKNPKLTRMLTFKFYMPKKATELKHLQCLEEELKP
+                ************************************************************
+
+5LQB            LEEVLNLAQSKNFHLRPRDLISNINVIVLELKGSETTFMCEYADETATIVEFLNRWITFS
+1M4C            LEEVLNLA---------RDLISNINVIVLELKGS---FMCEYADETATIVEFLNRWITFC
+                ********         *****************   **********************.
+
+5LQB            QSIISTLT
+1M4C            QSIIST--
+                ******  
