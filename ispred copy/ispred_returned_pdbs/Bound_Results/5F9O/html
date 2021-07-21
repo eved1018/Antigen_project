@@ -1,0 +1,133 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <title>
+   ISPRED4 - Bologna Biocomputing Group
+  </title>
+   <meta http-equiv="X-UA-Compatible" content="chrome=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, target-densitydpi=device-dpi">
+   <!--<link rel="stylesheet" href="[path]/ChemDoodleWeb.css" type="text/css">
+   <script type="text/javascript" src="/ChemDoodleWeb.js"></script>-->
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script type="text/javascript"><!--
+    // These variables are used by the web2py_ajax_init function in web2py_ajax.js (which is loaded below).
+    var w2p_ajax_confirm_message = "Are you sure you want to delete this object?";
+    var w2p_ajax_disable_with_message = "Working...";
+    var w2p_ajax_date_format = "%Y-%m-%d";
+    var w2p_ajax_datetime_format = "%Y-%m-%d %H:%M:%S";
+    var ajax_error_500 = 'An error occured, please <a href="/ispred/default/job_summary?jobid=9ff881e9-c3b4-4d9d-b285-a1f8702b8733">reload</a> the page'
+    //--></script>
+
+<meta name="keywords" content="web2py, python, framework">
+<meta name="description" content="a cool new app">
+<meta name="generator" content="Web2py Web Framework">
+<meta name="author" content="Your Name <you@example.com>">
+<script src="/ispred/static/js/jquery.js" type="text/javascript"></script><link href="/ispred/static/css/calendar.css" rel="stylesheet" type="text/css"><script src="/ispred/static/js/calendar.js" type="text/javascript"></script><script src="/ispred/static/js/web2py.js" type="text/javascript"></script><link href="/ispred/static/plugin_layouts/layouts/HotAirBalloons/style.css" rel="stylesheet" type="text/css"><link href="/ispred/static/css/custom.css" rel="stylesheet" type="text/css"><link href="/ispred/static/css/tooltipster.css" rel="stylesheet" type="text/css"><link href="/ispred/static/css/tooltipster-light.css" rel="stylesheet" type="text/css"><link href="/ispred/static/css/simplePagination.css" rel="stylesheet" type="text/css"><link href="/ispred/static/css/cookieBar.css" rel="stylesheet" type="text/css"><script src="/ispred/static/js/jquery.tooltipster.min.js" type="text/javascript"></script><script src="/ispred/static/js/jquery.simplePagination.js" type="text/javascript"></script><script src="/ispred/static/js/jquery.cookieBar/jquery.cookieBar.js" type="text/javascript"></script><script src="/ispred/static/plugin_layouts/superfish.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+  <style>
+      #submit_record__row_help { display:none;}
+ul.web2py-menu-vertical { width: 150px; position: relative; top:1em; left:1em;  z-index:30; border:0; margin:0; padding: 0; list-style: none; text-decoration: none;}
+ul.web2py-menu-vertical li { margin:0; padding:0; border:0; width: 150px; background: black; text-align:left;}
+ul.web2py-menu-vertical li a { margin:0; padding: 1px 3px 1px 3px; border:0; width: 144px; color: white; font-size:12px;}
+div.flash { position: fixed; float: right; padding: 10px; top: 10px; right: 30px; opacity: 0.75; margin: 10px 10px 10px 10px; text-align: center; clear: both; color: #fff; font-size: 11pt; text-align: center; vertical-align: middle; cursor: pointer; background: black; border: 2px solid #fff; -moz-border-radius: 5px; -webkit-border-radius: 5px; z-index: 2; }
+div.error { background-color: red; color: white; padding: 3px; }
+.auth_navbar { text-align:right; z-index:20; position: absolute; top: 2px; right:30px; border:0; padding:0 }
+  </style>
+ <script>
+     $(document).ready(function() {
+         $('.tooltip').tooltipster({contentAsHTML: true, trigger: 'click',
+                                    theme: 'tooltipster-light',
+                                    delay: 0,
+                                    speed: 100});
+        });
+ </script>
+     <script type="text/javascript">
+    $(document).ready(function() {
+      $.cookieBar();
+    });
+</script>
+
+ </head>
+ <body style=""><div class="ui-widget"><div style="" class="cookie-message ui-widget-header blue"><p>!!! WARNING !!! In this web site we make use of "Technical Cookies". The technical Cookies are needed to show our web page, make it work correctly. These technical cookies are necessary for our web page to function properly. For more information please see: <a href="http://www.unibo.it/it/cookies/">UniBo policies</a> or <a href="http://ec.europa.eu/ipg/basics/legal/cookies/index_en.htm">European Commission</a></p> <a class="cookiebar-close">Continue</a></div></div>
+  <!-- start header -->
+  <!--<span class="auth_navbar"> [ <a href="/ispred/default/user/login?_next=/ispred/default/job_summary%3Fjobid%3D9ff881e9-c3b4-4d9d-b285-a1f8702b8733" rel="nofollow">Log In</a> | <a href="/ispred/default/user/register?_next=/ispred/default/job_summary%3Fjobid%3D9ff881e9-c3b4-4d9d-b285-a1f8702b8733" rel="nofollow">Sign Up</a> | <a href="/ispred/default/user/request_reset_password?_next=/ispred/default/job_summary%3Fjobid%3D9ff881e9-c3b4-4d9d-b285-a1f8702b8733" rel="nofollow">Lost password?</a> ] </span>-->
+  <div id="wrapper">
+   <div id="header">
+    <div id="logo">
+        <div class="menutop">
+            <div class="menuentry"><a href="/ispred/default/index">Home</a></div>
+            <div class="menuentry"><a href="/ispred/default/searchjob">SearchJob</a></div>
+            <div class="menuentry"><a href="/ispred/default/software">Software/Datasets</a></div>
+            <div class="menuentry"><a href="/ispred/default/references">References</a></div>
+            <div class="menuentry"><a href="/ispred/default/contact">Contact</a></div>
+            <div class="menuentry"><a href="http://biocomp.unibo.it">BiocomputingGroup</a></div>
+            </div>
+        </div>
+        <!--
+        <h2>
+      INPS
+     </h2>-->
+        <!-- <p>A Predictor of the Impact of Non-Synonymous Mutations on Protein Stability from Sequence</p> -->
+    </div>
+   </div>
+   <!-- end #header -->
+   <div id="page">
+    <div id="content">
+     <div class="flash" style="display: none;"></div>
+     
+<div class="table infotab"><div class="tablecaption">Job summary</div><div class="tablerow"><div class="tablecell" style="width: 30%;">Predictor:</div><div class="tablecell" style="width: 40%;">ispred</div></div><div class="tablerow"><div class="tablecell" style="width: 30%;">Jobid:</div><div class="tablecell" style="width: 40%;">9ff881e9-c3b4-4d9d-b285-a1f8702b8733</div><div class="tablecell fieldhelp" style="width: 70%;"><i class="fa fa-arrow-circle-left fa-lg"></i><span> Store this JobID in order to recover your job results in the future.</span></div></div><div class="tablerow"><div class="tablecell" style="width: 30%;">Submission time:</div><div class="tablecell" style="width: 40%;">Wed, 07 Jul 2021 20:24:35</div></div><div class="tablerow"><div class="tablecell" style="width: 30%;">Completion time:</div><div class="tablecell" style="width: 40%;">--</div></div><div class="tablerow"><div class="tablecell">Current task:</div><div class="tablecell" id="jobstatusmsg"><div data-w2p_remote="/ispred/default/job_status.load?jobid=9ff881e9-c3b4-4d9d-b285-a1f8702b8733" data-w2p_timeout="4000" data-w2p_times="Infinity" id="c0892933933628">loading...</div></div></div><div class="tablerow"><div class="tablecell">Results:</div><div class="tablecell"><div data-w2p_remote="/ispred/default/display_result_link.load?jobid=9ff881e9-c3b4-4d9d-b285-a1f8702b8733&amp;linktext=DisplayResults&amp;placeholder=" data-w2p_timeout="8000" data-w2p_times="Infinity" id="c585476069936">loading...</div></div><div class="tablecell fieldhelp" style="width: 70%;"><i class="fa fa-arrow-circle-left fa-lg"></i><span> A link "Display results" will be available here once the job has completed.</span></div></div></div>
+
+
+    </div>
+    <!-- end #content -->
+    <!--
+    <div id="sidebar">
+     <div class="title">
+       <h2>
+        Information
+       </h2>
+          </div>
+     <ul>
+      <li>
+       <ul>
+        <li>
+            <a href="/ispred/default/index">
+          Home
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+    -->
+    <!-- end #sidebar -->
+    <div style="clear: both;">
+    </div>
+   </div>
+   <!-- end #page -->
+   
+   <div id="footer" style="height: 80px;">
+           Copyright (c) 2016 Bologna Biocomputing Group - University of Bologna. All rights reserved.
+   </div>
+   <!-- end #footer -->
+  
+ 
+
+</body></html>
