@@ -1,0 +1,661 @@
+4rgn 5tlk
+
+1A14.N	387 c
+1AHW.C	208 c
+1AR1.A	529 c
+1AR1.B	252 c
+1BGX.T	832 c 
+
+1BJ1.V	94 - might need to add chain W
+
+MOL_ID: 3;                                                           
+COMPND  16 MOLECULE: VASCULAR ENDOTHELIAL GROWTH FACTOR A;                      
+COMPND  17 CHAIN: V, W;
+
+1BQL.Y	129 c
+1BVK.A	108 - please check on the next 3, might only be C,F
+1BVK.B	116
+1BVK.C	129 
+
+HUMANIZED ANTI-LYSOZYME FV COMPLEXED WITH LYSOZYME  
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: HULYS11;                                                   
+COMPND   3 CHAIN: A, D;                                                         
+COMPND   4 FRAGMENT: FV;                                                        
+COMPND   5 ENGINEERED: YES;                                                     
+COMPND   6 MOL_ID: 2;                                                           
+COMPND   7 MOLECULE: HULYS11;                                                   
+COMPND   8 CHAIN: B, E;                                                         
+COMPND   9 FRAGMENT: FV;                                                        
+COMPND  10 ENGINEERED: YES;                                                     
+COMPND  11 MOL_ID: 3;                                                           
+COMPND  12 MOLECULE: LYSOZYME;                                                  
+COMPND  13 CHAIN: C, F;                                                         
+COMPND  14 SYNONYM: MURAMIDASE
+
+
+1E6J.P	210 c 
+1EGJ.A	101 c
+1EO8.A	319 c 
+1EO8.B	175 c 
+1EZV.A	430 c 
+1EZV.B	352 c 
+1EZV.C	385 c 
+1EZV.D	245 c 
+1EZV.E	185 c 
+1EZV.F	125 c 
+1EZV.G	93  c 
+1EZV.I	55  c
+1FBI.X	129 - might need to add chain Y
+
+COMPND   9 MOL_ID: 3;                                                           
+COMPND  10 MOLECULE: GUINEA FOWL LYSOZYME;                                      
+COMPND  11 CHAIN: X, Y;
+
+1FE8.A	190 - might need to add B 
+1FE8.C	191
+
+MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: VON WILLEBRAND FACTOR;                                     
+COMPND   3 CHAIN: A, B, C;                                                      
+COMPND   4 FRAGMENT: COLLAGEN BINDING DOMAIN A3;
+
+1FJ1.E	251 - might need to add chain F
+
+COMPND  11 MOL_ID: 3;                                                           
+COMPND  12 MOLECULE: OUTER SURFACE PROTEIN A;                                   
+COMPND  13 CHAIN: E, F;
+
+1FNS.A	196 - c
+1FSK.A	159 - might need to add D,G,J
+
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: MAJOR POLLEN ALLERGEN BET V 1-A;                           
+COMPND   3 CHAIN: A, D, G, J;                                                   
+COMPND   4 SYNONYM: BET V I-A, BETVI ALLERGEN;
+ 
+1G9M.G	410  c
+1G9M.C	181  c
+1H0D.C	123 c
+1HYS.E	23 c
+1HYS.F	22 c
+1HYS.A	553 c
+1HYS.B	425 c
+1IQD.C	156 c
+1JHL.A	129 c
+1JPS.T	207 c
+1JRH.I	95 c
+1K4C.C	103 c
+1LK3.A	137 - might need to add B
+
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: INTERLEUKIN-10;                                            
+COMPND   3 CHAIN: A, B;                                                         
+COMPND   4 FRAGMENT: RESIDUES 26-175;                                           
+COMPND   5 SYNONYM: IL-10M1 (ENGINEERED MONOMER OF HUMAN INTERLEUKIN-           
+COMPND   6 10), IL-10, CYTOKINE SYNTHESIS INHIBITORY FACTOR, CSIF; 
+
+1MHP.A	192 - might need to add B
+
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: INTEGRIN ALPHA 1, (RESIDUES 169-360);                      
+COMPND   3 CHAIN: A, B;                                                         
+COMPND   4 FRAGMENT: ALPHA1 I-DOMAIN;                                           
+COMPND   5 SYNONYM: LAMININ AND COLLAGEN RECEPTOR, VLA-1, CD49A;                
+COMPND   6 ENGINEERED: YES;                                                     
+COMPND   7 MUTATION: YES;
+
+1MLC.E	129 - might need to add F
+
+COMPND   9 MOL_ID: 3;                                                           
+COMPND  10 MOLECULE: HEN EGG WHITE LYSOZYME;                                    
+COMPND  11 CHAIN: E, F;                                                         
+COMPND  12 ENGINEERED: YES
+
+1N8Z.C	607 c
+1NCA.N	388 c
+1NSN.S	138 c
+1OAZ.A	122 - might need to add B
+
+COMPND  11 MOL_ID: 3;                                                           
+COMPND  12 MOLECULE: THIOREDOXIN 1;                                             
+COMPND  13 CHAIN: A, B;                                                         
+COMPND  14 FRAGMENT: TRX-SHEAR3, RESIDUES 1-123;                                
+COMPND  15 SYNONYM: TRX1, TRX, TRXA, TSNC, FIPA;                                
+COMPND  16 ENGINEERED: YES
+
+1OB1.C	96 c
+1OB1.F	97 c
+1ORS.C	132 c
+1OSP.O	251 c
+1OTS.A	444 c
+1OTS.B	441 c
+1PKQ.E	119 c 
+1PKQ.J	118 c
+1QFU.A	318 c
+1QFU.B	174 c
+1RJL.A	212 - should delete A, B (light/heavy chains)
+1RJL.B	221
+1RJL.C	95
+1RJL.D	5
+
+MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: FAB H6831 L-CHAIN;                                         
+COMPND   3 CHAIN: A;                                                            
+COMPND   4 MOL_ID: 2;                                                           
+COMPND   5 MOLECULE: FAB H6831 H-CHAIN;                                         
+COMPND   6 CHAIN: B;                                                            
+COMPND   7 MOL_ID: 3;                                                           
+COMPND   8 MOLECULE: OUTER SURFACE PROTEIN B;                                   
+COMPND   9 CHAIN: C;                                                            
+COMPND  10 ENGINEERED: YES;                                                     
+COMPND  11 MOL_ID: 4;                                                           
+COMPND  12 MOLECULE: OUTER SURFACE PROTEIN B;                                   
+COMPND  13 CHAIN: D;
+
+1SY6.A	204 c
+1TPX.A	102 - might need to delete B, C
+1TPX.B	223
+1TPX.C	214
+
+OVINE RECOMBINANT PRP(114-234), ARQ VARIANT IN 
+COMPLEX WITH THE FAB OF THE VRQ14 ANTIBODY
+COMPND   2 MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: MAJOR PRION PROTEIN;                                       
+COMPND   3 CHAIN: A;                                                            
+COMPND   4 FRAGMENT: OVPRP (114-234);                                           
+COMPND   5 SYNONYM: PRION PROTEIN;                                              
+COMPND   6 ENGINEERED: YES;                                                     
+COMPND   7 MOL_ID: 2;                                                           
+COMPND   8 MOLECULE: THE VRQ14 FAB;                                             
+COMPND   9 CHAIN: B;                                                            
+COMPND  10 FRAGMENT: RESIDUES (1-223);                                          
+COMPND  11 MOL_ID: 3;                                                           
+COMPND  12 MOLECULE: THE VRQ14 FAB;                                             
+COMPND  13 CHAIN: C;                                                            
+COMPND  14 FRAGMENT: RESIDUES (1-214)
+
+
+1TZH.V	94 - might need to add chain W
+
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: VASCULAR ENDOTHELIAL GROWTH FACTOR A;                      
+COMPND   3 CHAIN: V, W;
+
+1UJ3.C	205 c
+1V7M.V	145 - might need to add chain X
+
+COMPND  11 MOL_ID: 3;                                                           
+COMPND  12 MOLECULE: THROMBOPOIETIN;                                            
+COMPND  13 CHAIN: V, X;
+
+1W72.A	274 - might need to add chain D, E, F
+1W72.B	100
+1W72.C	9
+
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: HLA CLASS I HISTOCOMPATIBILITY ANTIGEN;                    
+COMPND   3 CHAIN: A, D;                                                         
+COMPND   4 FRAGMENT: EXTRACELLULAR DOMAIN, RESIDUES 25-298;                     
+COMPND   5 SYNONYM: HUMAN LYMPHOCYTE ANTIGEN HLA-A1, A-1 ALPHA CHAIN PRECURSOR  
+COMPND   6  MHC CLASS I ANTIGEN A*1;                                            
+COMPND   7 ENGINEERED: YES;                                                     
+COMPND   8 MOL_ID: 2;                                                           
+COMPND   9 MOLECULE: BETA-2-MICROGLOBULIN;                                      
+COMPND  10 CHAIN: B, E;                                                         
+COMPND  11 FRAGMENT: RESIDUES 21-119;                                           
+COMPND  12 SYNONYM: HDCMA22P;                                                   
+COMPND  13 ENGINEERED: YES;                                                     
+COMPND  14 MOL_ID: 3;                                                           
+COMPND  15 MOLECULE: MELANOMA-ASSOCIATED ANTIGEN 1;                             
+COMPND  16 CHAIN: C, F;                                                         
+COMPND  17 SYNONYM: MAGE-A1, MAGE-1 ANTIGEN, ANTIGEN MZ2-E;  
+
+
+1WEJ.F	105 c
+1XF5.P	16 c
+1XF5.Q	8 c
+
+Should Protein L be included?
+COMPND  13 MOL_ID: 4;                                                           
+COMPND  14 MOLECULE: PROTEIN L;                                                 
+COMPND  15 CHAIN: L, M;                                                         
+COMPND  16 ENGINEERED: YES;                                                     
+COMPND  17 MUTATION: YES 
+
+1XIW.A	91 c
+1XIW.E	87 c
+1XIW.B	74 c
+1XIW.F	71 c
+1YY9.A	613 c
+1ZTX.E	101 c
+2ADF.A	189
+2AEP.A	388
+
+2ARJ.R	120 - r, q same mol _ ID
+2ARJ.Q	119
+
+2BDN.A	68
+2CMR.A	216
+2DD8.S	192
+2EIZ.C	129
+2FD6.A	122
+2FD6.U	275
+2J4W.D	34
+
+2J6E.A	210 - a, b, same mol_ID
+2J6E.B	209
+
+2J88.A	324
+2JEL.P	85
+2NR6.A	336 - b, not included but same mol_ID
+2NY7.G	410
+2NYY.A	1294
+2OZ4.A	265
+2Q8A.A	332
+2QQN.A	154
+2R29.A	97
+
+2R56.A	159 - b has same mol_id, but wasn't included
+
+2UZI.R	166
+2VDK.A	452
+2VDK.B	461
+2VXQ.A	92
+
+2VXS.A	95 - c and d also have same mol id as a, b,
+2VXS.B	93
+
+2W9E.A	99
+2XQB.A	113
+2XQY.A	503 - e: same mol id, but not included
+2XRA.A	4040
+2XTJ.A	268
+2XTJ.P	92
+2XWT.C	234
+2Y5T.E	26
+2Y5T.G	24
+2Y5T.F	27
+2YBR.C	65 - f has same mol id, not included
+2YBR.I	66
+2YPV.A	242
+2ZCH.P	231
+3B2U.A	195 - A,B,E,I,M,P,S,V same mol id
+3B2U.B	194
+3B2U.I	193
+3B9K.A	118 - e same mol id
+3B9K.B	117 - f same mol id
+3BGF.S	179
+3BGF.A	180
+3BN9.B	229 - a has same mol id
+3CVH.A	274 - m has same mol id
+3CVH.B	99 - n has same mol id
+3CVH.C	8 - o has same mol id
+3D85.C	160
+3D85.D	305
+3DVG.X	75
+3DVG.Y	76
+3EOA.I	179 j has same mol id
+3G04.C	228
+3GBM.A	317
+3GBM.C	316
+3GBM.B	177
+3GBM.D	173
+3GI8.C	435
+3GJF.A	276 - d has same mol id
+3GJF.B	100 - e has same mol id
+3GJF.C	9 - f has same mol id
+3GRW.A	206
+3H42.A	92
+3H42.B	530
+3HI1.G	403 - j has same mol id
+3HI6.A	180 - b has same mol id
+3HMX.A	305
+3HMX.B	186
+3I50.E	291
+3IDX.G	410
+3IU3.I	158
+3IU3.K	156 - j has same mol id
+3JWD.A	471
+3JWD.B	469
+3JWD.C	184
+3JWD.D	183
+3KR3.D	60
+3KS0.A	92 - b has same mol id
+
+Add chains L,J??
+COMPND    MOL_ID: 1;                                                            
+COMPND   2 MOLECULE: HEME DOMAIN OF FLAVOCYTOCHROME B2;                         
+COMPND   3 CHAIN: L, J; 
+
+3L5W.I	104 - J has same mol id
+3L5X.A	105
+3LD8.A	334
+3LEV.A	177
+3LH2.S	66 - U has same mol id
+3LH2.T	67
+3LH2.V	68
+3LIZ.A	335
+3LZF.A	315
+3LZF.B	173
+3MA9.A	216
+3MXW.A	153
+3NFP.I	164
+3NFP.K	161
+3NGB.G	449 - A, D, I same mol id
+3NH7.A	85 - B,C,D same mol id
+3O0R.B	449
+3O0R.C	142
+3PGF.A	367
+3Q1S.I	140
+3RKD.A	146
+3RKD.B	145
+
+
+
+
+
+3RVV.A	223
+3S35.X	112
+3S37.X	110
+3SDY.A	319
+3SDY.B	172
+3SE9.G	449
+3SKJ.E	176
+3SKJ.F	143
+3SO3.A	229
+3SQO.A	529
+3SQO.P	92
+3T2N.A	370
+3T2N.B	369
+3THM.F	92
+3U2S.G	121
+3U7Y.G	449
+3U9P.C	174
+3UC0.A	296
+3V6O.A	203
+3V6O.B	202
+3VG9.A	304
+3VI3.A	601
+3VI3.C	600
+3VI3.B	440
+3VI3.D	441
+3W9E.C	229
+3WIH.A	96
+3WKM.A	176
+3WKM.B	179
+3WXV.A	375
+3X3F.A	71
+3ZKM.A	384
+3ZTN.A	327
+3ZTN.B	173
+4AEI.A	65
+4AG4.A	341
+4AL8.C	98
+4BZ1.A	96
+4BZ2.A	101
+4CMH.A	240
+4CNI.C	171
+4D3C.A	172
+4D9Q.A	228
+4DGI.A	97
+4DKF.A	161
+4DKF.B	146
+4DN4.M	61
+4DQO.C	120
+4DTG.K	60
+4DW2.U	223
+4EDW.V	108
+4EDX.W	107
+4ETQ.X	235
+4ETQ.C	233
+4F15.A	351
+4F15.D	385
+4F15.G	350
+4F15.J	395
+4F2M.E	148
+4F37.A	102
+4FFV.A	727
+4FFV.B	729
+4FFY.A	97
+4FP8.A	267 - b same mol id
+4FP8.C	265
+4FP8.D	266
+4FQI.A	317
+4FQI.B	176
+4FQJ.A	292
+4G3Y.C	148
+4G6J.A	149
+4G6M.A	150
+4GMS.A	316
+4GMS.B	171
+4H8W.G	449
+4H8W.C	176
+4HC1.A	202
+4HCR.A	202
+4HF5.A	318
+4HF5.B	172
+4HJ0.A	92
+4HJ0.B	91
+4HKX.E	212
+4HLZ.A	318
+4HLZ.B	172
+4HT1.T	145
+4HWB.A	111
+4I77.Z	101
+4I9W.A	259
+4I9W.B	257
+4IJ3.A	237
+4IRZ.A	592
+4J4P.A	314
+4J4P.B	316
+4J6R.G	449
+4JLR.S	104
+4JLR.C	103
+4JPK.A	169
+4JPW.G	449
+4JR9.A	447
+4JZJ.C	266
+4K2U.A	272
+4K2U.B	275
+4K3J.A	227
+4K3J.B	526
+4K94.C	199
+4KI5.M	154
+4KUC.A	259
+4KXZ.A	112
+4L5F.E	98
+4LEO.C	604
+4LF3.C	95
+4LF3.F	94
+4LIQ.E	481
+4LQF.A	86
+4LSU.G	449
+4LU5.A	88
+4LVN.A	336
+4LVN.P	81
+4M1G.A	86
+4M1G.B	87
+4M48.A	575
+4M5Z.A	209
+4M62.S	155
+4MWF.C	225
+4NNP.A	278
+4NZR.M	391
+4O58.A	317
+4O58.B	172
+4O9H.A	166
+4OGX.A	236
+4OII.A	177
+4OKV.E	65
+4OKV.F	66
+4OT1.A	319
+4PLJ.A	148
+4PLJ.B	147
+4PP1.A	222
+4PP2.E	222
+4PY8.A	328
+4PY8.B	173
+4QCI.C	92
+4QCI.D	96
+4QHU.C	119
+4QHU.D	109
+4QNP.A	386
+4QTI.U	277
+4QWW.A	533
+4R8W.A	316
+4R8W.B	169
+4RDQ.A	366
+4RGM.S	236
+4RGN.A	236
+4RGN.S	237
+4RWY.A	449
+4TSA.A	117
+4U0R.A	345
+4U6V.A	282
+4UTA.A	395
+4UTA.B	398
+4UV7.A	613
+4XAK.A	211
+4XMP.G	448
+4XNM.C	205
+4XNY.G	448
+4XVS.G	450
+4XWG.A	376
+4Y5V.A	121 - diabodies: delete  A, D, G
+4Y5V.D	122
+4Y5V.G	119
+4Y5V.C	215
+4Y5V.I	210 - F is same mol id
+
+>4Y5V_1|Chains A,D,G|diabody 305 VH domain|Homo sapiens (9606)
+HSAFAGSEVQLVESGGGLVQPGGSLRLSCAASGFTFSSYWMSWVRQAPGKGLEWVANIKPDGSEKYYVDSVKGRFTISRDNAKNSVYLQMNSLRAEDTAVYYCARVSRGGSYSDWGQGTLVTVSSGGGGS
+>4Y5V_2|Chains B,E,H|Diabody 305 VL domain|Homo sapiens (9606)
+SQSALTQPASVSGSPGQSITISCTGTSSDVGGYIYVSWYQQHPGKAPKLMIYDVSRRPSGISDRFSGSKSGNTASLTISGLQAEDEADYYCNSYTTLSTWLFGGGTKVTVLAAAGGG
+>4Y5V_3|Chains C,F,I|Erythropoietin receptor|Homo sapiens (9606)
+
+4Y5Y.A	118 - diabodies: delete A, D, B. 
+4Y5Y.D	119
+4Y5Y.B	112
+4Y5Y.C	212
+4Y5Y.F	216
+
+>4Y5Y_1|Chains A,D|diabody 330 VH domain|Homo sapiens (9606)
+HSAFAGSEVQLVESGGGLVQPGGSLRLSCAVSGFTFSKYWMTWVRQAPGKGLEWVANIKPDGSEKYYVESVKGRFTISRDNAKNSVYLQMNSVRAEDTAVYYCARVSRGGSFSDWGQGTLVTVSSGGGGS
+>4Y5Y_2|Chains B,E|diabody 330 VL domain|Homo sapiens (9606)
+QSALTQPPSASGSPGQSVTISCTGTSSDVGAYNYVSWYQQHPGKAPKLMIYEVARRPSGVPDRFSGSKSGNTASLTVSGLQAEDEADYYCSSYAGSNNFAVFGRGTKLTVLAAAGGG
+>4Y5Y_3|Chains C,F|Erythropoietin receptor|Homo sapiens (9606)
+
+
+4YDJ.G	448
+4YDJ.I	449
+4YDK.G	448
+4YK4.E	206
+4YPG.C	159
+4YPG.D	161
+4YQX.A	122
+4YQX.M	123
+4YUE.C	121
+4YWG.G	123
+4YWG.Q	121
+4ZPT.R	208
+4ZS7.A	162
+4ZSO.E	224
+4ZSO.F	223
+5A3I.A	323
+5A3I.B	166
+5ANM.E	208
+5ANM.F	212
+5ANM.G	211
+5B3J.A	381
+5B3J.B	377
+5B3J.C	356
+5BV7.A	396
+5C0N.A	131
+5C7X.A	116
+5CBA.E	61
+5CBA.F	64
+5CZX.A	247
+5D70.A	115
+5D8J.A	133
+5D93.A	240
+5D93.D	238
+5DFV.A	90
+5DHV.M	61
+5DHV.N	58
+5DUM.A	208
+5DUR.C	218
+5EN2.C	141
+5EU7.A	153
+5F3B.C	109
+5F96.G	449
+5F9O.G	448
+5F9W.A	447
+5FB8.C	92
+5FCU.G	447
+5FHX.A	124
+5GGT.A	116
+5GJS.A	324
+5GJS.B	168
+5GZN.A	407
+5GZN.E	240
+5GZN.G	242
+5GZO.A	405
+5H35.C	195
+5HDQ.A	277
+5HYS.G	214
+5HYS.I	213
+5I9Q.A	444
+5I9Q.G	449
+5IES.C	169
+5IKC.M	89
+5IKC.N	90
+5JHL.A	403
+5JQ6.A	323
+5K59.D	281
+5K59.C	282
+5K59.B	295
+5K9K.I	496
+5K9K.F	498
+5K9Q.A	320
+5K9Q.C	319
+5K9Q.E	318
+5K9Q.B	168
+5K9Q.D	169
+5K9Q.P	163
+5K9Q.R	167
+5KAN.A	319
+5KAN.B	173
+5KAN.D	171
+5KAN.F	170
+5KJR.G	449
+5KJR.N	28
+5KVD.E	108
+5KVE.E	101
+5KVF.E	105
+5KVG.E	107
+5KW9.A	290
+5L0Q.A	203
+5L0Q.D	199
+5L6Y.C	109
+5LCV.A	425
+5LCV.B	423
+5LQB.A	128
+5MES.A	151
+5MHR.A	162
+5MHR.B	163
+5MVZ.U	150
+5SX4.M	191
+5SX4.N	192
+5SY8.O	155
+5T5F.A	226
+5TE4.G	447
+5TLK.X	80
+5TPW.A	389
+5TPW.B	354
+5TZ2.C	114
+5TZT.C	111
+5TZT.D	116
+5TZU.C	115
+5UGY.A	323
+5UGY.B	173

@@ -1,0 +1,25 @@
+delete all 
+    fetch 5CE1.A
+    color blue 
+    set cartoon_transparency,0.75
+    select ann, resi 253+317+320+321+323+324+325+326+327+328+329+330+331+333+341+383+384+385+386+387
+    indicate bycalpha ann
+    create annotated, indicate
+    select pred, resi 378+353+349+348+350+377+379+381+302+301+254+380+376+188+187+203+351+383+347+300+388+331+250+171+99+208+413+343+375+210+100+386
+    indicate bycalpha pred
+    create pred_res, indicate
+    show sphere, annotated
+    color pink, annotated
+    set sphere_transparency, 0.5,annotated
+    show sphere, pred_res
+    set sphere_scale,0.5,pred_res
+    color green, pred_res
+    set sphere_transparency,0,pred_res
+    set cartoon_transparency,1,pred_res
+    remove resn hoh
+    hide (het)
+    zoom complete=1
+    bg_color white 
+    set ray_opaque_background, 1
+    png /Users/moshe/Desktop/Research_Antigen/Vorffip/results/Images/3T2N/3T2N_vorffip.png,width=900, height=900,dpi = 350,ray=1
+    quit

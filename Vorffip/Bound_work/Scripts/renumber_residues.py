@@ -1,6 +1,5 @@
 from pathlib import Path
 
-
 def split_pdb_line_vorffip(line):
     pdb_parts = [line[:6], line[6:11],
                 line[12:16], line[17:20], line[21],
@@ -35,7 +34,7 @@ for file in vorffip_folder.iterdir():
                 res_num = line_data[5]
                 res_name = line_data[3]
                 coordinated = line_data[6:9]
-                score = float(line_data[-1])/100
+                score = float(line_data[-1])/100 #switch
                 for item in original_pdbs_folder.iterdir():
                     if vorffip_protein_name == item.name[:4]:
                         with open(item) as original_pdb_file:
