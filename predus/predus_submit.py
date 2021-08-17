@@ -1,3 +1,9 @@
+#fix output file link !!!!!!!!!!!!!!!
+"PD2.1l3w_A."
+
+
+
+
 import os, sys
 import requests
 from pathlib import Path
@@ -24,7 +30,7 @@ folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Ant
 
 for file in folder.iterdir():
     protein_name = file.name[:4]
-    
+
     browser = webdriver.Chrome(executable_path=DRIVER_PATH,
                                 options=chrome_options)
     site = "https://bhapp.c2b2.columbia.edu/PredUs/index_omega.html"
