@@ -44,7 +44,7 @@ for file in folder.iterdir():
 
     #input email
     email_input = browser.find_element_by_id("email1")
-    email_input.send_keys("mcarrol2@mail.yu.edu")
+    email_input.send_keys("INPUT EMAIL")
 
     #submit
 
