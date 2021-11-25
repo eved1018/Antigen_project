@@ -1,17 +1,27 @@
 from pathlib import Path
 
-unbound_folder = Path("/Users/moshe/Desktop/Research_Antigen/Vorffip/Unbound_work/Data/unbound_pdbs_reformatted")
+#put file in here: format: "1_1A2Y.A_4KXI_LYS,0.1453"
+
+unbound_folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/unboundData")
+
+
+
 for file in unbound_folder.iterdir():
     with open(file) as unbound_file:
-        protein_name1 = file.name[:4]
-        protein_name2 = file.name[7:11]
+        
+        #fix
+
+        protein_name1 = file.name[12:16]
+        protein_name2 = file.name[19:23]
+
+
         protein_name = f"{protein_name1}_{protein_name2}"
         print(protein_name)
         for line in unbound_file:
             unbound_res = line.split("_")[0]
             #fix path
 
-            annotated_folder = Path("/Users/moshe/Desktop/Research_Antigen/Updated_PDBs_and_Data/Unbound_annotated_or_not_for_residues")
+            annotated_folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_data/Unbound_annotated_or_not_for_residues")
             
             for item in annotated_folder.iterdir():
                 ann_protein_name = item.name[:9]
@@ -21,15 +31,19 @@ for file in unbound_folder.iterdir():
                          
                             annotated_res_num = line1.split("_")[0]
                             if_annotated = line1.split(",")[2]
-                            if annotated_res_num== unbound_res:
+                            if annotated_res_num == unbound_res:
+
+
                                 #fix path
-                                with open()
+
+                                with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/unbound_data_with_annotated/{protein_name}.txt", "a") as f:
                                     f.write(f"{line.strip()},{if_annotated.strip()}\n")
 
 
 
 #fix path
-next_folder = Path()
+
+next_folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/unbound_data_with_annotated/")
 for input_file in next_folder.iterdir():
 
     with open(input_file, "r") as fp:
@@ -52,22 +66,22 @@ for input_file in next_folder.iterdir():
                     new_lines.append(line)
     #print("\n".join(new_lines))
     #fix path
-    with open(), "w") as fp:
+    with open("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/unbound_data_with_annotated_and_duplicates_eliminated/", "w") as fp:
         fp.write("\n".join(new_lines))
 
 
 
 
-
+from pathlib import Path
 #fix paths
-folder_2 = Path()
-with open(, "w") as outfile:
+folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/unbound_data_with_annotated/")
+with open("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/unbound_data_complete.txt", "w") as outfile:
 
     for file in folder_2.iterdir():
     
         with open(file) as infile:
             contents = infile.read()
-            outfile.write(f"{contents}\n")
+            outfile.write(f"{contents}")
 
             
 
@@ -77,32 +91,32 @@ with open(, "w") as outfile:
 
 
 
-# annotated_unbound_folder = Path("/Users/moshe/Desktop/Research_Antigen/Updated_PDBs_and_Data/antigen_complexed/annotated_results_updated") 
-# results_folder = Path("/Users/moshe/Desktop/Research_Antigen/ispred/ispred_bound_formatted")
-# for file in results_folder.iterdir():
+annotated_unbound_folder = Path("/Users/moshe/Desktop/Research_Antigen/Updated_PDBs_and_Data/antigen_complexed/annotated_results_updated") 
+results_folder = folder_2
+for file in results_folder.iterdir():
     
-#     with open(file, "r") as file1:
-#         data = file1.read()
+    with open(file, "r") as file1:
+        data = file1.read()
 
-#         #get number of occurrences of the substring in the string
-#         occurrences = data.count(",1")
-#         protein_name = file.name[:4]
-#         #print('Number of occurrences of the word :', occurrences, protein_name)
-#         for annotated_file in annotated_unbound_folder.iterdir():
-#             if protein_name in str(annotated_file.name):
-#                 unbound_annotated_results_file = annotated_file
-#                 with open(unbound_annotated_results_file) as file_unbound:
-#                     file_unbound = open(unbound_annotated_results_file,"r")
+        #get number of occurrences of the substring in the string
+        occurrences = data.count(",1")
+        protein_name = file.name[:4]
+        #print('Number of occurrences of the word :', occurrences, protein_name)
+        for annotated_file in annotated_unbound_folder.iterdir():
+            if protein_name in str(annotated_file.name):
+                unbound_annotated_results_file = annotated_file
+                with open(unbound_annotated_results_file) as file_unbound:
+                    file_unbound = open(unbound_annotated_results_file,"r")
                 
-#                     Counter = 0
-#                     Content = file_unbound.read()
-#                     CoList = Content.split("\n")
+                    Counter = 0
+                    Content = file_unbound.read()
+                    CoList = Content.split("\n")
 
-#                     for i in CoList:
-#                         if i:
-#                             Counter += 1
-#                     counter1 = Counter
+                    for i in CoList:
+                        if i:
+                            Counter += 1
+                    counter1 = Counter
 
                 
-#                 if counter1 != occurrences:
-#                     print(counter1, occurrences, protein_name)
+                if counter1 != occurrences:
+                    print(counter1, occurrences, protein_name)

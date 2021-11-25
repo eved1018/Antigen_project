@@ -1,0 +1,4 @@
+protein,top_res_num,distance_cutoff,predicted_num_at_interface,TP
+4DTG,47,7,8,0
+4DTG,47,10,11,1
+4DTG,47,15,23,6
