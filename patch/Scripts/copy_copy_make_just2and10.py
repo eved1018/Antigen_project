@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
-folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/test_data/results_division_test")
+folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/ispred_test/results_division_test_ispred")
 for csv_file in folder.iterdir():
 
     df = pd.read_csv(csv_file)
@@ -30,13 +30,13 @@ for csv_file in folder.iterdir():
                     list_below_i.append(float(line.strip().split(",")[2]))
                     if int(line.strip().split(",")[3]) == 1:
                         list_below_i_annotated.append(int(line.strip().split(",")[1]))
-                        with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/unbound_cutoff.csv") as cutoff_file:
-                            for line in cutoff_file:
-                                if protein == line.strip().split(",")[0][:4]:
-                                    dynamic_cutoff = line.strip().split(",")[2]
-                                    total_annotated = line.strip().split(",")[3]
+    with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/unbound_cutoff.csv") as cutoff_file:
+        for line in cutoff_file:
+            if protein == line.strip().split(",")[0][:4]:
+                dynamic_cutoff = line.strip().split(",")[2]
+                total_annotated = line.strip().split(",")[3]
     # print(protein, dynamic_cutoff, total_annotated, i,len(set(list_below_i)),len(set(list_below_i_annotated)))
     
     
-    with open("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/test_data/test_2_10.csv", "a") as outfile:
+    with open("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/ispred_test/test_2_10.csv", "a") as outfile:
         outfile.write(f"{protein},{i},{len(set(list_below_i))},{len(set(list_below_i_annotated))},{total_annotated},{dynamic_cutoff}\n")

@@ -19,7 +19,7 @@ for file in pdb_folder.iterdir():
     with open(file) as pdb_file:
         protein_name = file.name[12:25]
         print(protein_name)
-        os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/test_data/extracted_coordinates_spidder/{protein_name}")
+        os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/ispred_test/extracted_coordinates_ispred/{protein_name}")
 
         for line in pdb_file:
             if line.startswith("ATOM"):
@@ -32,5 +32,5 @@ for file in pdb_folder.iterdir():
                 zcoordinated = line_data[8]
 
             
-                with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/test_data/extracted_coordinates_spidder/{protein_name}/{res_num}.txt", 'a') as f:
+                with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/ispred_test/extracted_coordinates_ispred/{protein_name}/{res_num}.txt", 'a') as f:
                     f.write(f"{atom_name},{res_name},{res_num},{xcoordinated},{ycoordinated},{zcoordinated}\n")

@@ -1,12 +1,12 @@
 from pathlib import Path
 
 
-with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/test_data/spidder_unbound_max_residues_top_4_test.txt") as infile_0:
+with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/ispred_test/ispred_unbound_max_residues_top_4_test.txt") as infile_0:
     for attempt in infile_0:
-        protein = attempt.strip().split(".")[0][-4:]
+        protein = attempt.strip().split("_")[1][:4]
         picked_residue = attempt.strip().split("_")[0]
 
-        folder_1 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/test_data/extracted_coordinates_averaged_spidder_2/")
+        folder_1 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/ispred_test/extracted_coordinates_averaged_ispred_2/")
         for tonka in folder_1.iterdir():
             if tonka.name[:4] == protein:
                 with open (tonka) as infile:
@@ -35,6 +35,6 @@ with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antige
                                                     residue = str(line2.strip().split("_")[0])
                                                     if residue == residue_number:
                                                         annotated = line2.strip().split(",")[2]
-                                                        with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/test_data/results_division_test/{protein}.csv", "a") as outfile:
+                                                        with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/patch/ispred_test/results_division_test_ispred/{protein}.csv", "a") as outfile:
                                                             outfile.write(f"{picked_residue},{residue_number},{distance},{annotated}\n")
 
