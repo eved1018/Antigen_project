@@ -1,6 +1,6 @@
 from pathlib import Path
 
-folder_cluster_1 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/distance_clustering/testing_ispred_unbound_separate/cluster_lists/cluster_2")
+folder_cluster_1 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/distance_clustering/testing_ispred_unbound_separate/cluster_lists_k_means/cluster_1")
 folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_data/unbound_annotated_results_copy")
 
 global_TP = 0
