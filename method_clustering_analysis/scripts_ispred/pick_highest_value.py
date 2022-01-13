@@ -4,7 +4,7 @@ import pandas as pd
 import re
 folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/method_clustering_analysis/test_data_ispred_unbound/patches")
 folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_data/unbound_annotated_results_copy")
-
+folder_3 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/method_clustering_analysis/test_data_ispred_unbound/predicted_residues")
 def getkey(row):
     if not row.strip(): return 0 # insurance against blank lines
     data = row.split(',')
@@ -175,37 +175,42 @@ for file in folder.iterdir():
                     # list_2_items_not_in_list_1 = list(set_2 - set_1)
                     # combined_list = list_1 + list_2_items_not_in_list_1
 
+                    for tonka_5 in folder_3.iterdir():
+                        if tonka_5.name[:4] == file.name[:4]:
+                            with open (tonka_5) as infile_5:
+                                for tonka_5_line in infile_5:
+                                    pred_cutoff_res = tonka_5_line.strip()
+                                    combined_list_final.append(pred_cutoff_res)
+                                combined_list_final = list(set(combined_list_final))
 
-                    combined_list_final = list(set(combined_list_final))
+                                for item in folder_2.iterdir():
+                                    if item.name[:4] == file.name[:4]:
+                                        for i2 in combined_list_final:
+                                            with open (item) as infile_2:
+                                                for line_2 in infile_2:
+                                                    if str(i2.strip()) == str(line_2.strip().split(" ")[0]):
 
-                    for item in folder_2.iterdir():
-                        if item.name[:4] == file.name[:4]:
-                            for i2 in combined_list_final:
-                                with open (item) as infile_2:
-                                    for line_2 in infile_2:
-                                        if str(i2.strip()) == str(line_2.strip().split(" ")[0]):
-
-                                            tot_TP = tot_TP + 1
-                    
-                    with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/unbound_ispred_fscores.txt") as infile_3:
-                        for tonka in infile_3:
-                            protein = tonka.strip().split(",")[0]
-                            if protein == file.name[:4]:
-                                tot_annotated = tonka.strip().split(",")[1]
-                                old_fscore = tonka.strip().split(",")[3]
-
-                                Fn = int(tot_annotated) - int(tot_TP)
-                                Fp = int(len(combined_list_final)) - int(tot_TP)
-                                bottom_half= float(tot_TP + (.5*Fn) +(Fp*.5))
-                                fscore = round((tot_TP/bottom_half),4)
+                                                        tot_TP = tot_TP + 1
                                 
-                                print(f"{protein},{fscore},{old_fscore},{cutoff},{len(combined_list_final)},{tot_TP}")
-                                global_TP = tot_TP + global_TP
-                                global_FN = Fn + global_FN
-                                global_FP = Fp + global_FP
-                                # pred_res_list = "+".join(combined_list_final)
-                                # with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/method_clustering_analysis/test_data_ispred_unbound/patch_predicted_residues/{protein}.txt", "a") as outfile:
-                                #     outfile.write(pred_res_list)
+                                with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/unbound_ispred_fscores.txt") as infile_3:
+                                    for tonka in infile_3:
+                                        protein = tonka.strip().split(",")[0]
+                                        if protein == file.name[:4]:
+                                            tot_annotated = tonka.strip().split(",")[1]
+                                            old_fscore = tonka.strip().split(",")[3]
+
+                                            Fn = int(tot_annotated) - int(tot_TP)
+                                            Fp = int(len(combined_list_final)) - int(tot_TP)
+                                            bottom_half= float(tot_TP + (.5*Fn) +(Fp*.5))
+                                            fscore = round((tot_TP/bottom_half),4)
+                                            
+                                            print(f"{protein},{fscore},{old_fscore},{cutoff},{len(combined_list_final)},{tot_TP}")
+                                            global_TP = tot_TP + global_TP
+                                            global_FN = Fn + global_FN
+                                            global_FP = Fp + global_FP
+                                            # pred_res_list = "+".join(combined_list_final)
+                                            # with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/method_clustering_analysis/test_data_ispred_unbound/patch_predicted_residues/{protein}.txt", "a") as outfile:
+                                            #     outfile.write(pred_res_list)
 
 
 bottom_half_global= float(global_TP + (.5*global_FN) +(global_FP*.5))
