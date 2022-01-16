@@ -1,4 +1,3 @@
-protein,cluster_2_fscore,cluster_2_size,cluster_2_TP,cluster_1_fscore,cluster_1_size,cluster_1_TP,dynamic_cutoff,num_res_in_cluster_1,num_res_in_cluster_2,distance
 3IU3,0.0,18,0,0.0,12,0,30,12,18,41.0975
 2UZI,0.5161,13,8,0.5161,13,8,26,13,13,14.6941
 4JR9,0.0,18,0,0.0,15,0,33,15,18,31.3098
