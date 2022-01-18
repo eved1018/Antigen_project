@@ -14,7 +14,7 @@ import pandas as pd
 from pathlib import Path
 import sys
 
-predictor = "ispred"
+predictor = "sppider"
 os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}/kmeans_cluster_1")
 os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}/kmeans_cluster_2")
 
