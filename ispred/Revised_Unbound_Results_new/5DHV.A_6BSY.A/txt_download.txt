@@ -1,0 +1,75 @@
+ispred prediction results
+  Copyright (C) 2016 Castrense Savojardo
+  Department of Biological, Geological and Environmental Sciences (BiGeA)
+  Bologna Biocomputing Group
+  University of Bologna, Italy.
+  savojard@biocomp.unibo.it
+
+Protein info
+---------------------------------------
+
+ Protein id: input structure [chain A]
+ Protein length: 58
+ Surface length: 52
+
+
+ResNum	ResType	ASA	RSA	PredRSA	Depth	Protrusion	Surf	Inter	Probability
+-------------------------------------------------------------------------------------------
+8	S	163	1.0	0.23	0.0	4.13	yes	yes	0.68
+9	D	128	0.79	0.23	0.15	2.52	yes	yes	0.94
+10	E	102	0.53	0.31	0.4	1.96	yes	yes	0.91
+11	D	98	0.6	0.34	0.45	1.49	yes	yes	0.96
+12	L	52	0.32	0.17	0.34	0.79	yes	yes	0.97
+13	L	91	0.55	0.2	0.45	1.39	yes	yes	0.98
+14	K	126	0.61	0.25	0.0	1.53	yes	yes	0.88
+15	A	8	0.08	-	-	-	no	-	-
+16	V	74	0.52	0.13	0.74	0.78	yes	yes	0.98
+17	R	172	0.69	0.31	0.13	1.67	yes	yes	0.97
+18	L	93	0.57	0.09	0.68	0.94	yes	yes	0.98
+19	I	16	0.09	-	-	-	no	-	-
+20	K	137	0.67	0.2	0.14	1.44	yes	yes	0.96
+21	F	123	0.62	0.17	0.11	1.57	yes	yes	0.97
+22	L	42	0.26	0.18	1.8	0.58	yes	yes	0.65
+23	Y	71	0.32	0.26	0.33	0.52	yes	yes	0.88
+24	Q	120	0.61	0.37	0.0	1.43	yes	yes	0.95
+25	S	73	0.56	0.25	0.22	1.01	yes	yes	0.97
+26	N	6	0.04	-	-	-	no	-	-
+27	P	85	0.63	0.38	0.39	1.1	yes	yes	0.85
+28	P	95	0.7	0.3	0.61	1.19	yes	no	0.28
+29	P	27	0.2	-	-	-	no	-	-
+30	N	110	0.7	0.25	0.15	2.16	yes	yes	0.97
+31	P	98	0.72	0.26	0.21	1.62	yes	yes	0.97
+32	E	139	0.72	0.26	0.15	2.16	yes	yes	0.92
+33	G	51	0.61	0.21	0.0	1.77	yes	yes	0.56
+34	T	93	0.65	0.27	0.51	1.82	yes	yes	0.95
+35	R	190	0.77	0.38	0.11	2.75	yes	yes	0.94
+36	Q	142	0.72	0.2	0.3	2.09	yes	yes	0.87
+37	A	44	0.42	0.13	0.0	0.94	yes	yes	0.63
+38	R	89	0.36	0.32	0.36	1.08	yes	yes	0.93
+39	R	144	0.58	0.26	0.13	1.31	yes	yes	0.93
+40	N	78	0.5	0.18	0.49	0.95	yes	yes	0.77
+41	R	124	0.5	0.19	0.49	0.56	yes	yes	0.91
+42	R	98	0.4	0.28	0.89	0.63	yes	yes	0.88
+43	R	97	0.39	0.34	0.83	1.15	yes	yes	0.9
+44	R	116	0.47	0.22	0.24	1.21	yes	yes	0.93
+45	W	51	0.22	0.16	1.29	0.46	yes	yes	0.79
+46	R	104	0.42	0.4	0.24	0.86	yes	yes	0.8
+47	E	92	0.47	0.19	0.16	0.91	yes	no	0.49
+48	R	99	0.4	0.19	0.23	0.55	yes	yes	0.71
+49	Q	43	0.22	0.35	0.81	0.44	yes	no	0.27
+50	R	157	0.63	0.42	0.12	1.18	yes	yes	0.91
+51	Q	127	0.64	0.23	0.44	1.11	yes	yes	0.92
+52	I	20	0.12	-	-	-	no	-	-
+53	H	94	0.51	0.29	0.91	1.08	yes	yes	0.52
+54	S	44	0.34	0.16	0.45	0.99	yes	yes	0.88
+55	I	69	0.41	0.06	0.34	0.81	yes	yes	0.97
+56	S	7	0.05	-	-	-	no	-	-
+57	E	108	0.56	0.25	0.0	1.25	yes	yes	0.98
+58	R	192	0.77	0.24	0.0	1.85	yes	yes	0.93
+59	I	46	0.27	0.26	0.84	0.65	yes	yes	0.96
+60	L	56	0.34	0.19	0.84	0.75	yes	yes	0.97
+61	S	83	0.64	0.29	0.0	1.5	yes	yes	0.97
+62	T	108	0.76	0.3	0.18	1.57	yes	yes	0.96
+63	Y	87	0.39	0.23	0.35	1.07	yes	yes	0.99
+64	L	172	1.0	0.21	0.17	3.59	yes	yes	0.97
+65	G	67	0.8	0.21	0.0	2.03	yes	yes	0.74

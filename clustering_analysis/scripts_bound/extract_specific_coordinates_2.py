@@ -32,7 +32,7 @@ def split_pdb_line(line):
 
 
 
-predictor = "sppider"
+predictor = "dockpred"
 
 pdb_folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/bound_data/bound_pdbs")
 #on github -- bound/unbound

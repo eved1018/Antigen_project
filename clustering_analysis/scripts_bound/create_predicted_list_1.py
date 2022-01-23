@@ -14,11 +14,11 @@ import pandas as pd
 from pathlib import Path
 import sys
 
-predictor = "sppider"
+predictor = "dockpred"
 os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}")
 
-predictors = ['sppider'] #vorffip, dockpred, meta-ppisp/metappisp...
-df = pd.read_csv("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/bound_data_complete.txt")
+predictors = ['dockpred'] #vorffip, dockpred, meta-ppisp/metappisp...
+df = pd.read_csv("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/dockpred/Bound_Data/finalized_bound_dockpred_results.txt")
 
 #I'll send .csv for all dockpred, ispred, ...
 

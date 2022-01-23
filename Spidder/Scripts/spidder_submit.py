@@ -19,8 +19,7 @@ DRIVER_PATH = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_update
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("--disable-gpu")
-
-folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/bound_data/bound_pdbs")
+folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_data/newUnbound_pdbs/37_revised_unbound")
 for file_trying_path in folder.iterdir():
 
     browser = webdriver.Chrome(executable_path=DRIVER_PATH,
@@ -29,7 +28,7 @@ for file_trying_path in folder.iterdir():
     browser.get(site)
 
     email_input = browser.find_element_by_name("EMail")
-    email_input.send_keys("boundspidder@gmail.com")
+    email_input.send_keys("sppider37@gmail.com")
     browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
 

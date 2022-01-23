@@ -1,4 +1,4 @@
-predictor = "sppider"
+predictor = "dockpred"
 #switch fscore_dynamic_condition #3
 with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}/merged_cluster_outfile.csv") as infile_1:
     for line in infile_1:
@@ -29,7 +29,7 @@ with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antige
         if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance <= 23):
             dynamic_cutoff = cluster_2_size + cluster_1_size
             #sppider
-            with open("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/sppider_bound_dc_fscores.txt") as infile_fscore:
+            with open("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/dockpred/Bound_Data/dockpred_275_fscores.txt") as infile_fscore:
                 for item in infile_fscore:
                     if str(item.strip().split(",")[0]) == str(protein_1):
                         fscore_dynamic = item.strip().split(",")[1]
