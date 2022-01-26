@@ -1,3 +1,4 @@
+residue,sppider,annotated
 3_1JPS,0.3267,0
 4_1JPS,0.3441,0
 5_1JPS,0.1222,0
