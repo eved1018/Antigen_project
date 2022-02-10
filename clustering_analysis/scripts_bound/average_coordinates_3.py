@@ -14,7 +14,7 @@ import pandas as pd
 from pathlib import Path
 import sys
 
-predictor = "dockpred"
+predictor = "linearreg"
 
 
 folder_infile_1 = Path(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}")

@@ -34,10 +34,10 @@ for file_1 in folder_cluster_1.iterdir():
                     bottom_half= float(tot_TP + (.5*Fn) +(Fp*.5))
                     fscore = round((tot_TP/bottom_half),4)
                 
-
+                    
 
                     print(f"{protein},{fscore},{len(combined_list_final)},{tot_TP}")
-                    with open("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/test_/cluster_1_outfile.csv", "a") as outfile:
+                    with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_unbound/{predictor}/cluster_1_outfile.csv", "a") as outfile:
                         outfile.write(f"{protein},{fscore},{len(combined_list_final)},{tot_TP}\n")
 
 

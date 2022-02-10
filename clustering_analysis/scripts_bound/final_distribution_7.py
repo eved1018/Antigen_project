@@ -1,4 +1,4 @@
-predictor = "dockpred"
+predictor = "linearreg"
 #switch fscore_dynamic_condition #3
 with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}/merged_cluster_outfile.csv") as infile_1:
     for line in infile_1:
@@ -29,10 +29,12 @@ with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antige
         if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance <= 23):
             dynamic_cutoff = cluster_2_size + cluster_1_size
             #sppider
-            with open("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/dockpred/Bound_Data/dockpred_275_fscores.txt") as infile_fscore:
+            with open("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/moshe2/fscore_mcc_by_protein.csv") as infile_fscore:
                 for item in infile_fscore:
                     if str(item.strip().split(",")[0]) == str(protein_1):
-                        fscore_dynamic = item.strip().split(",")[1]
+                        fscore_dynamic = item.strip().split(",")[9]
+
+
                         with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}/both_clusters_nonzero_tp_below_23A.csv", "a") as outfile_4:
                             outfile_4.write(f"{protein_1},{fscore_dynamic},{dynamic_cutoff},{(int(cluster_2_tp)+int(cluster_1_tp))},clusters:1_2\n")
 

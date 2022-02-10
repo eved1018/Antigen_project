@@ -74,8 +74,8 @@ from pathlib import Path
 
 from pathlib import Path
 #fix paths
-folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/annotatedBound")
-with open("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/bound_data_complete.txt", "w") as outfile:
+folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/annotatedUnbound_new")
+with open("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Spidder/unbound_data_hold.txt", "w") as outfile:
 
     for file in folder_2.iterdir():
     

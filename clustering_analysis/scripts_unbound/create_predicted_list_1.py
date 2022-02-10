@@ -18,7 +18,7 @@ predictor = "ispred"
 os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_unbound/{predictor}")
 
 predictors = ['ispred'] #vorffip, dockpred, meta-ppisp/metappisp...
-df = pd.read_csv("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Unbound_predictor_results/unbound_ispred.txt")
+df = pd.read_csv("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/newest_finalized_unbound_ispred_results.txt")
 
 #I'll send .csv for all dockpred, ispred, ...
 

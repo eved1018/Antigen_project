@@ -37,5 +37,5 @@ for file_1 in folder_cluster_1.iterdir():
 
 
                     print(f"{protein},{fscore},{len(combined_list_final)},{tot_TP}")
-                    with open("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/test_/cluster_2_outfile.csv", "a") as outfile:
+                    with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_unbound/{predictor}/cluster_2_outfile.csv", "a") as outfile:
                         outfile.write(f"{protein},{fscore},{len(combined_list_final)},{tot_TP}\n")

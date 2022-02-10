@@ -14,11 +14,11 @@ import pandas as pd
 from pathlib import Path
 import sys
 
-predictor = "dockpred"
+predictor = "linearreg"
 os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}")
 
-predictors = ['dockpred'] #vorffip, dockpred, meta-ppisp/metappisp...
-df = pd.read_csv("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/dockpred/Bound_Data/finalized_bound_dockpred_results.txt")
+predictors = ['linearregression'] #vorffip, dockpred, meta-ppisp/metappisp...
+df = pd.read_csv("/Users/moshe/Desktop/Research_MetaDPI/antigen_data/linearreg_bound.txt")
 
 #I'll send .csv for all dockpred, ispred, ...
 
