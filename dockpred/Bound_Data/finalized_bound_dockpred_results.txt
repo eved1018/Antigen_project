@@ -1,3 +1,4 @@
+residue,dockpred,annotated
 456_1A14_TRP,1,0
 458_1A14_TRP,0.823862,0
 454_1A14_GLY,0.703836,0

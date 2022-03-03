@@ -1,4 +1,4 @@
-predictor = "linearreg"
+predictor = "xgboost"
 with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}/cluster_1_outfile.csv") as infile_1:
     for line in infile_1:
         protein = line.strip().split(",")[0]

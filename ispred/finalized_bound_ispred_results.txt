@@ -1,3 +1,4 @@
+residue,ispred,annotated
 338_1EGJ_ILE,0.5095,0
 339_1EGJ_GLN,0.4862,0
 340_1EGJ_MET,0.3486,0

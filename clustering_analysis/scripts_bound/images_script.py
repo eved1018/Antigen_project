@@ -5,14 +5,14 @@ import pandas as pd
 from pathlib import Path
 import sys
 folder_chain = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/bound_data/annotated_results_updated")
-folder_pred = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/ispred/kmeans_cluster_1")
-folder_pred_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/ispred/kmeans_cluster_2")
+folder_pred = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/xgboost/kmeans_cluster_1")
+folder_pred_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/xgboost/kmeans_cluster_2")
 folder_pdb_name = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/bound_data/bound_pdbs")
 def test():
-    predictors = ['ispred']
-    df = pd.read_csv("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/finalized_bound_ispred_results.txt")
+    predictors = ['xgboost']
+    df = pd.read_csv("/Users/moshe/Desktop/Research_MetaDPI/antigen_data/xgboost_bound.txt")
     #df.set_index('residue', inplace= True )
-    results_path = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/images_center"
+    results_path = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/analysis_of_zero_fscores/xgboost/hema_images/xgboost"
     code = 1
     Main(predictors,df,results_path,code)
 
@@ -27,7 +27,7 @@ def Main(predictors,df,results_path,code):
         return
 
     path = Path(__file__).parents[2]
-    results_folder = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/ispred/images_center"
+    results_folder = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/analysis_of_zero_fscores/xgboost/hema_images/xgboost"
     # results_folder = f"{results_path}/"
     folder = "Images"
     # df = Df_maker(path)
@@ -45,7 +45,6 @@ def Main(predictors,df,results_path,code):
     os.mkdir(f"{results_folder}/{folder}")
     os.mkdir(f"{results_folder}/scripts")
     for protein in proteins:
-        os.mkdir(f"{results_folder}/{folder}/{protein}")
         pml_maker(protein,df,cutoff_csv,folder,path,predictors,results_folder)
 
 # def Df_maker(path):
@@ -128,7 +127,8 @@ def pml_predicted_2(protein,cutoff_csv,df,predictor):
 def image_wrapper(args):
     (path, protein,predictor,folder,protein_name,chain_name,annotated_res_list,pred_res_list,pred_res_list_2,results_folder) = args
     # load_file = f"{path}/Code/PDB_Files/Predus_241_for_real/predus_{protein_name}_{chain_name}.pdb"
-    filename = f"{results_folder}/{folder}/{protein}/{protein}_{predictor}.png"
+    os.mkdir(f"{results_folder}/{folder}/{protein_name}")
+    filename = f"{results_folder}/{folder}/{protein_name}/{protein}_{predictor}.png"
     total_script=f"""delete all 
     fetch {protein_name}.{chain_name}
     color blue 
@@ -182,21 +182,24 @@ def image_wrapper(args):
 def pml_maker(protein,df,cutoff_csv,folder,path,predictors,results_folder):
     for fire_medic in folder_pdb_name.iterdir():
         if protein == str(fire_medic.name[:4]):
-            for file_2 in folder_chain.iterdir():
-                if file_2.name[:4] == protein:
+            with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/analysis_of_zero_fscores/xgboost/proteins_hema_to_analyze.txt") as infile_text:
+                for line_text in infile_text:
+                    if protein == line_text.strip():
+                        for file_2 in folder_chain.iterdir():
+                            if file_2.name[:4] == protein:
 
-                    protein_name = fire_medic.name[:4]
-                    chain_name = file_2.name[5:6]
-
+                                protein_name = fire_medic.name[:4]
+                                chain_name = file_2.name[5:6]
+                                print(protein_name)
             # watch out for this
             # predictors = ['predus', "ispred","dockpred","rfscore","logreg","vorffip","meta-ppisp"]
-            for predictor in predictors:
-                annotated_res_list = pml_annotated(protein,df,folder)
-                pred_res_list = pml_predicted(protein,cutoff_csv,df,predictor)
-                pred_res_list_2 = pml_predicted_2(protein,cutoff_csv,df,predictor)
-                args = (path, protein,predictor,folder,protein_name,chain_name,annotated_res_list,pred_res_list,pred_res_list_2,results_folder)
-                image_wrapper(args)
-        
+                                for predictor in predictors:
+                                    annotated_res_list = pml_annotated(protein,df,folder)
+                                    pred_res_list = pml_predicted(protein,cutoff_csv,df,predictor)
+                                    pred_res_list_2 = pml_predicted_2(protein,cutoff_csv,df,predictor)
+                                    args = (path, protein,predictor,folder,protein_name,chain_name,annotated_res_list,pred_res_list,pred_res_list_2,results_folder)
+                                    image_wrapper(args)
+
 
 
 test()
