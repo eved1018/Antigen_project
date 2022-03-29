@@ -1,12 +1,11 @@
 28P.txt
+16P.txt
+17P.txt
+13P.txt
+12P.txt
 77P.txt
-48P.txt
 72P.txt
-80P.txt
-81P.txt
-42P.txt
-68P.txt
 83P.txt
 82P.txt
 79P.txt
-78P.txt
+27P.txt

@@ -1,12 +1,3 @@
-29P.txt
-129P.txt
-106P.txt
-107P.txt
-110P.txt
-79P.txt
-32P.txt
-133P.txt
-132P.txt
-27P.txt
-31P.txt
-130P.txt
+103P.txt
+33P.txt
+131P.txt
