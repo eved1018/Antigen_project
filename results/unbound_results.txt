@@ -1,0 +1,4 @@
+Method,avg_fscore_pre_clustering,avg_fscore_post_clustering,set
+Sppider,0.162,N/A,195(all)
+Ispred,0.222,N/A,195(all)
+Dockpred,0.189,N/A,195(all)
