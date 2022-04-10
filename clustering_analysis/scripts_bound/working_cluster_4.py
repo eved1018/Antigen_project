@@ -14,7 +14,7 @@ import pandas as pd
 from pathlib import Path
 import sys
 
-predictor = "xgboost"
+predictor = "discotope"
 os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}/kmeans_cluster_1")
 os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}/kmeans_cluster_2")
 
@@ -167,7 +167,9 @@ def main():
 
 folder = Path(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}")    
 for file in folder.iterdir():
-    for file_2 in file.iterdir():
-        if "_bound_averaged_results" in file_2.name:
-            protein = file.name[:4]
-            main()         
+    if ".DS_Store" not in str(file):
+        for file_2 in file.iterdir():
+            if ".DS_Store" not in str(file_2):
+                if "_bound_averaged_results" in file_2.name:
+                    protein = file.name[:4]
+                    main()         

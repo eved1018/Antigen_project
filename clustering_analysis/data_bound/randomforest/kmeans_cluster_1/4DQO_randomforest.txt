@@ -1,7 +1,0 @@
-201P.txt
-214P.txt
-205P.txt
-196P.txt
-197P.txt
-122P.txt
-125P.txt

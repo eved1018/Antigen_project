@@ -1,6 +1,0 @@
-172P.txt
-8P.txt
-4P.txt
-6P.txt
-7P.txt
-21P.txt

@@ -5,8 +5,6 @@
 415P.txt
 98P.txt
 99P.txt
-83P.txt
-394P.txt
 450P.txt
 452P.txt
 453P.txt

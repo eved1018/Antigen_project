@@ -1,5 +1,5 @@
 from pathlib import Path
-predictor = "xgboost"
+predictor = "discotope"
 folder_cluster_1 = Path(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}/kmeans_cluster_1")
 folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/bound_data/bound_annotated_results copy")
 

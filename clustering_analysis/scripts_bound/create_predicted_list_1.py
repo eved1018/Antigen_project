@@ -14,11 +14,11 @@ import pandas as pd
 from pathlib import Path
 import sys
 
-predictor = "xgboost"
+predictor = "discotope"
 os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/{predictor}")
 
-predictors = ['xgboost'] #vorffip, dockpred, meta-ppisp/metappisp...
-df = pd.read_csv("/Users/moshe/Desktop/Research_MetaDPI/antigen_data/xgboost_bound.txt")
+predictors = ['discotope'] #vorffip, dockpred, meta-ppisp/metappisp...
+df = pd.read_csv("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/discotope/input.txt")
 
 #I'll send .csv for all dockpred, ispred, ...
 

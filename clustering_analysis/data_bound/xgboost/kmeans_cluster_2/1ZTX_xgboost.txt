@@ -1,9 +1,0 @@
-302P.txt
-301P.txt
-304P.txt
-310P.txt
-361P.txt
-363P.txt
-364P.txt
-365P.txt
-333P.txt

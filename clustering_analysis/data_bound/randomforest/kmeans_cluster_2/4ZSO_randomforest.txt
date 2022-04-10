@@ -1,8 +1,0 @@
-200P.txt
-203P.txt
-198P.txt
-143P.txt
-197P.txt
-232P.txt
-145P.txt
-186P.txt

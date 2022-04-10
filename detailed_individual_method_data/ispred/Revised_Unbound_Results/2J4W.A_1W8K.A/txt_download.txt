@@ -1,0 +1,52 @@
+ispred prediction results
+  Copyright (C) 2016 Castrense Savojardo
+  Department of Biological, Geological and Environmental Sciences (BiGeA)
+  Bologna Biocomputing Group
+  University of Bologna, Italy.
+  savojard@biocomp.unibo.it
+
+Protein info
+---------------------------------------
+
+ Protein id: input structure [chain A]
+ Protein length: 35
+ Surface length: 29
+
+
+ResNum	ResType	ASA	RSA	PredRSA	Depth	Protrusion	Surf	Inter	Probability
+-------------------------------------------------------------------------------------------
+421	I	175	1.0	0.18	0.16	2.39	yes	yes	0.92
+422	F	80	0.41	0.18	0.37	0.85	yes	yes	0.98
+423	I	80	0.47	0.18	0.36	0.73	yes	yes	0.97
+424	S	26	0.2	0.39	0.81	0.62	yes	yes	0.96
+425	N	115	0.73	0.25	0.18	1.23	yes	yes	0.97
+426	D	89	0.55	0.31	0.62	1.46	yes	yes	0.98
+427	K	67	0.33	0.51	0.3	0.78	yes	yes	0.99
+428	E	133	0.69	0.23	0.0	1.44	yes	yes	0.65
+429	S	69	0.53	0.18	0.0	1.26	yes	yes	0.98
+430	I	21	0.12	-	-	-	no	-	-
+431	K	160	0.78	0.33	0.16	2.0	yes	yes	0.97
+432	C	26	0.19	-	-	-	no	-	-
+433	P	94	0.69	0.23	0.19	1.55	yes	yes	0.97
+434	C	56	0.41	0.47	0.22	1.45	yes	yes	0.98
+435	E	144	0.74	0.27	0.3	1.65	yes	yes	0.62
+436	P	13	0.1	-	-	-	no	-	-
+437	E	96	0.49	0.38	0.4	1.06	yes	yes	0.85
+438	R	175	0.71	0.18	0.25	1.68	yes	yes	0.94
+439	I	42	0.25	0.17	0.35	0.84	yes	yes	0.68
+440	S	103	0.79	0.24	0.0	1.88	yes	yes	0.94
+441	Q	178	0.9	0.38	0.0	3.58	yes	yes	0.9
+442	S	18	0.14	-	-	-	no	-	-
+443	T	139	0.98	0.3	0.0	2.6	yes	yes	0.97
+444	C	63	0.47	0.25	0.22	1.66	yes	yes	0.94
+445	N	114	0.73	0.17	0.17	1.1	yes	yes	0.94
+446	F	72	0.37	0.26	0.63	0.86	yes	yes	0.99
+447	Y	46	0.21	0.23	1.77	0.47	yes	yes	0.7
+448	V	28	0.2	-	-	-	no	-	-
+449	C	1	0.01	-	-	-	no	-	-
+450	N	102	0.65	0.38	0.0	1.08	yes	yes	0.98
+451	C	47	0.35	0.32	0.22	1.21	yes	yes	0.97
+452	V	42	0.3	0.22	0.22	1.29	yes	yes	0.93
+453	E	135	0.7	0.24	0.14	3.19	yes	yes	0.97
+454	K	145	0.71	0.23	0.16	2.7	yes	yes	0.98
+455	R	259	1.0	0.23	0.0	5.09	yes	yes	0.75

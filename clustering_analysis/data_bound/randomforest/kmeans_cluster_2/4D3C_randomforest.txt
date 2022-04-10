@@ -1,7 +1,0 @@
-105P.txt
-104P.txt
-80P.txt
-81P.txt
-82P.txt
-79P.txt
-118P.txt

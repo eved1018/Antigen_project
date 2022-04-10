@@ -1,10 +1,8 @@
-489P.txt
 488P.txt
-360P.txt
 432P.txt
 426P.txt
 433P.txt
-395P.txt
+434P.txt
 390P.txt
 392P.txt
 436P.txt
