@@ -1,4 +1,4 @@
-predictor = "ispred"
+predictor = "dockpred"
 with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_unbound/{predictor}/merged_cluster_outfile.csv") as infile_1:
     for line in infile_1:
         protein_1 = line.strip().split(",")[0]
@@ -27,7 +27,7 @@ with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antige
         #3
         if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance <= 23):
             dynamic_cutoff = cluster_2_size + cluster_1_size
-            with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/new_fscores_unbound_ispred.txt") as infile_fscore:
+            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Unbound_predictor_results/fscores/{predictor}_unbound.csv") as infile_fscore:
                 for item in infile_fscore:
                     if str(item.strip().split(",")[0]) == str(protein_1):
                         fscore_dynamic = item.strip().split(",")[1]
@@ -70,7 +70,7 @@ with open (f'/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antig
         total_tp = total_tp + tp
         predicted = int(line_3.strip().split(",")[2])
         total_predicted = total_predicted + predicted
-with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/unbound_ispred_fscores.txt") as infile_4:
+with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/ispred/unbound_ispred_fscores.txt") as infile_4:
     for line_4 in infile_4:
         annotated = int(line_4.strip().split(",")[1])
         total_annotated = annotated + total_annotated

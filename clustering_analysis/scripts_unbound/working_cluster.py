@@ -14,7 +14,11 @@ import pandas as pd
 from pathlib import Path
 import sys
 
-predictor = "ispred"
+predictor = "dockpred"
+
+
+
+
 os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_unbound/{predictor}/kmeans_cluster_1")
 os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_unbound/{predictor}/kmeans_cluster_2")
 
@@ -146,7 +150,7 @@ def averageXYZ(cluster1, cluster2, data):
 
     protein_name = file.name[:4]
     if protein_name == protein:
-        with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/unbound_cutoff copy.csv") as infile_4:
+        with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cutoffs/unbound_cutoff.csv") as infile_4:
             for fire_medic in infile_4:
                 if fire_medic.strip().split(",")[0] == protein_name:
                     dynamic_cutoff = fire_medic.strip().split(",")[2]

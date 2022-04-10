@@ -14,18 +14,18 @@ import pandas as pd
 from pathlib import Path
 import sys
 
-predictor = "ispred"
+predictor = "dockpred"
 os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_unbound/{predictor}")
 
-predictors = ['ispred'] #vorffip, dockpred, meta-ppisp/metappisp...
-df = pd.read_csv("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/newest_finalized_unbound_ispred_results.txt")
+predictors = ['dockpred'] #vorffip, dockpred, meta-ppisp/metappisp...
+df = pd.read_csv("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/Unbound_predictor_results/dockpred_unbound_results.txt")
 
 #I'll send .csv for all dockpred, ispred, ...
 
 
 #df.set_index('residue', inplace= True )
 results_path = "/Users/moshe/Desktop/Research_Antigen/Vorffip/results"
-cutoff_path = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/unbound_cutoff copy.csv"
+cutoff_path = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cutoffs/unbound_cutoff.csv"
 cutoff_csv = pd.read_csv(cutoff_path)
 
 

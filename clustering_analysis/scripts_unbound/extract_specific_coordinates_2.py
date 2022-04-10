@@ -32,9 +32,9 @@ def split_pdb_line(line):
 
 
 
-predictor = "ispred"
+predictor = "dockpred"
 
-pdb_folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_data/unbound_pdbs")
+pdb_folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_pdbs_and_annotated_residue_data/unbound_pdbs")
 #on github -- bound/unbound
 annotated_folder = Path(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_unbound/{predictor}/")
 #on github -- bound/unbound

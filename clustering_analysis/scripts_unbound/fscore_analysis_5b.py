@@ -1,7 +1,7 @@
 from pathlib import Path
-predictor = "ispred"
+predictor = "dockpred"
 folder_cluster_1 = Path(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_unbound/{predictor}/kmeans_cluster_2")
-folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_data/unbound_annotated_results_copy")
+folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_pdbs_and_annotated_residue_data/unbound_annotated_results_copy")
 
 for file_1 in folder_cluster_1.iterdir():
     protein_name_1 = file_1.name[:4]
@@ -23,7 +23,7 @@ for file_1 in folder_cluster_1.iterdir():
                 #fix this
 
 
-        with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/ispred/unbound_ispred_fscores.txt") as infile_3:
+        with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/ispred/unbound_ispred_fscores.txt") as infile_3:
             for tonka in infile_3:
                 protein = tonka.strip().split(",")[0]
                 if protein == protein_name_1:
