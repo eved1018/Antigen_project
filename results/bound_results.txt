@@ -1,6 +1,6 @@
-Method,avg_fscore_pre_clustering,avg_fscore_post_clustering,set
-Dockpred,0.227,0.274,275(all)
-Sppider,0.181,0.224,275(all)
-Ispred,0.262,0.314,275(all)
-XGBoost,0.323,0.376,77(cv)
+Method,avg_fscore_pre_clustering,avg_fscore_post_clustering,set,avg_mcc_pre_clustering,avg_mcc_post_clustering
+Dockpred,0.227,0.274,275(all),0.119,0.188
+Sppider,0.181,0.224,275(all),0.068,0.134
+Ispred,0.262,0.314,275(all),0.166,0.238
+XGBoost,0.323,0.376,77(cv),0.230,0.308
 

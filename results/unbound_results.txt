@@ -1,6 +1,6 @@
-Method,avg_fscore_pre_clustering,avg_fscore_post_clustering,set
-Sppider,0.162,0.209,195(all)
-Ispred,0.222,0.272,195(all)
-Dockpred,0.189,0.248,195(all)
+Method,avg_fscore_pre_clustering,avg_fscore_post_clustering,set,avg_mcc_pre_clustering,avg_mcc_post_clustering
+Sppider,0.162,0.209,195(all),0.051,0.133
+Ispred,0.222,0.272,195(all),0.120,0.198
+Dockpred,0.189,0.248,195(all),0.092,0.176
 
 DOCKPRED: MISSING: '3KS0', '5E94', '2J4W', '3CVH'
