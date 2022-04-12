@@ -1,4 +1,4 @@
-residue,dockpred,annotated
+res,dockpred,annotated
 458_1A14,1,0
 457_1A14,0.814728,0
 456_1A14,0.798464,0
