@@ -21,35 +21,55 @@ def split_pdb_line_original_pdb(item_line):
 
 
 vorffip_folder = Path("/Users/moshe/Desktop/Research_Antigen/Vorffip/Bound_work/Data/Bound_Galaxy-History-Unnamed-history/datasets_new")
-original_pdbs_folder = Path("/Users/moshe/Desktop/Research_Antigen/Vorffip/Bound_work/Data/antigen_pdbs")
+original_pdbs_folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/bound_pdbs_and_annotated_residue_data/bound_pdbs")
 
 
-for file in vorffip_folder.iterdir():
-    with open(file) as vorffip_file:
-        vorffip_protein_name = file.name[:4]
-        print(vorffip_protein_name)
-        for line in vorffip_file:
+# for file in vorffip_folder.iterdir():
+#     with open(file) as vorffip_file:
+#         vorffip_protein_name = file.name[:4]
+#         print(vorffip_protein_name)
+#         for line in vorffip_file:
+#             if line.startswith("ATOM"):
+#                 line_data = split_pdb_line_vorffip(line)
+#                 res_num = line_data[5]
+#                 res_name = line_data[3]
+#                 coordinated = line_data[6:9]
+#                 score = float(line_data[-1])/100 #switch
+#                 for item in original_pdbs_folder.iterdir():
+#                     if vorffip_protein_name == item.name[:4]:
+#                         with open(item) as original_pdb_file:
+#                             for item_line in original_pdb_file:
+#                                 if item_line.startswith("ATOM"):
+#                                     line_data_original = split_pdb_line_original_pdb(item_line)
+#                                     coordinated_original = line_data_original[6:9]
+#                                     if coordinated_original == coordinated:
+#                                         res_num_original = line_data_original[5]
+#                                         with open(f"/Users/moshe/Desktop/Research_Antigen/Vorffip/Bound_work/Data/Bound_pdbs_formatted_and_renumbered/{vorffip_protein_name}_vorffip_results_renumbered.txt", 'a') as f:
+#                                             f.write(f"{res_num_original}_{vorffip_protein_name}_{res_name},{score} \n")
+#                                         if res_num_original != res_num:
+#                                             print(vorffip_protein_name, res_num_original, res_num)
+    
+for file in original_pdbs_folder.iterdir():
+    with open (file) as file_1:
+        list_res = []
+        for line in file_1:
             if line.startswith("ATOM"):
                 line_data = split_pdb_line_vorffip(line)
                 res_num = line_data[5]
                 res_name = line_data[3]
                 coordinated = line_data[6:9]
-                score = float(line_data[-1])/100 #switch
-                for item in original_pdbs_folder.iterdir():
-                    if vorffip_protein_name == item.name[:4]:
-                        with open(item) as original_pdb_file:
-                            for item_line in original_pdb_file:
-                                if item_line.startswith("ATOM"):
-                                    line_data_original = split_pdb_line_original_pdb(item_line)
-                                    coordinated_original = line_data_original[6:9]
-                                    if coordinated_original == coordinated:
-                                        res_num_original = line_data_original[5]
-                                        with open(f"/Users/moshe/Desktop/Research_Antigen/Vorffip/Bound_work/Data/Bound_pdbs_formatted_and_renumbered/{vorffip_protein_name}_vorffip_results_renumbered.txt", 'a') as f:
-                                            f.write(f"{res_num_original}_{vorffip_protein_name}_{res_name},{score} \n")
-                                        if res_num_original != res_num:
-                                            print(vorffip_protein_name, res_num_original, res_num)
-    
+                list_res.append(res_num)
+                # print(list_res)
+    # print(set(list_res), file.name)
+        list_res = set(list_res)
+        list_res = sorted(list_res)
+        for item in list_res:
+            if "B" in item or ("A" in item) or ("C" in item) or ("D" in item) or ("E" in item) or ("F" in item) or ("G" in item) or ("H" in item) or ("I" in item) or ("J" in item) or ("K" in item) or ("L" in item) or ("M" in item) or ("N" in item):
+                item_num = item[:-1]
+                if item_num in list_res:
+                    print(item, item_num, file.name)
 
+                
 
 
         
