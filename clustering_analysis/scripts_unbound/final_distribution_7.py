@@ -1,4 +1,4 @@
-predictor = "dockpred"
+predictor = "xgboost"
 with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_unbound/{predictor}/merged_cluster_outfile.csv") as infile_1:
     for line in infile_1:
         protein_1 = line.strip().split(",")[0]

@@ -1,0 +1,94 @@
+delete all 
+                fetch 4NNO.A
+
+                color blue 
+                set cartoon_transparency,0.75
+
+
+                select ann1, resi 230+231+232+233+234+235+237+238+239+241+242+262+266
+                indicate bycalpha ann1
+                create annotated1, indicate
+                select ann2, resi 251+260+267+268+269+270+271+272+273+274+275+276+277+289
+                indicate bycalpha ann2
+                create annotated2, indicate
+                select ann3, resi 
+                indicate bycalpha ann3
+                create annotated3, indicate
+                select ann4, resi 251+260+267+268+269+270+271+272+273+274+275+276+277+289
+                indicate bycalpha ann4
+                create annotated4, indicate
+                select ann5, resi 
+                indicate bycalpha ann5
+                create annotated5, indicate
+                select ann6, resi 
+                indicate bycalpha ann6
+                create annotated6, indicate
+                select ann7, resi 
+                indicate bycalpha ann7
+                create annotated7, indicate
+                select ann8, resi 
+                indicate bycalpha ann8
+                create annotated8, indicate
+                select ann9, resi 
+                indicate bycalpha ann9
+                create annotated9, indicate
+
+
+                select pred, resi 129+180+289+298+123+235+242+176+246+132+128+286+234+238+173+77+100+247+241+104+172+131+269+275+222+47+74+273+72+251
+                indicate bycalpha pred
+                create pred_res, indicate
+
+
+
+                show sphere, annotated1
+                color pink, annotated1
+                set sphere_transparency, 0.5,annotated1
+                show sphere, annotated2
+                color blue, annotated2
+                set sphere_transparency, 0.5,annotated2
+                show sphere, annotated3
+                color aquamarine, annotated3
+                set sphere_transparency, 0.5,annotated3
+                show sphere, annotated4
+                color br3, annotated4
+                set sphere_transparency, 0.5,annotated4
+                show sphere, annotated5
+                color br6, annotated5
+                set sphere_transparency, 0.5,annotated5
+                show sphere, annotated6
+                color br9, annotated6
+                set sphere_transparency, 0.5,annotated6
+                show sphere, annotated7
+                color brightorange, annotated7
+                set sphere_transparency, 0.5,annotated7
+                show sphere, annotated8
+                color deepsalmon, annotated8
+                set sphere_transparency, 0.5,annotated8
+                show sphere, annotated9
+                color violet, annotated9
+                set sphere_transparency, 0.5,annotated9
+
+
+
+
+
+
+
+
+                show sphere, pred_res
+                set sphere_scale,0.5,pred_res
+                color green, pred_res
+                set sphere_transparency,0,pred_res
+                set cartoon_transparency,1,pred_res
+
+
+
+
+
+                remove resn hoh
+                hide (het)
+                zoom complete=1
+                bg_color white 
+                set ray_opaque_background, 1
+                png /Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt/protein_images/Images/4NNO/4NNO_xgboost.png,width=900, height=900,dpi = 350,ray=1
+                quit

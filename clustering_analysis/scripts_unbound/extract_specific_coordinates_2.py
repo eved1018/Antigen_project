@@ -32,7 +32,7 @@ def split_pdb_line(line):
 
 
 
-predictor = "dockpred"
+predictor = "xgboost"
 
 pdb_folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_pdbs_and_annotated_residue_data/unbound_pdbs")
 #on github -- bound/unbound

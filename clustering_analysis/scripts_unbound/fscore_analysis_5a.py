@@ -1,5 +1,5 @@
 from pathlib import Path
-predictor = "dockpred"
+predictor = "xgboost"
 folder_cluster_1 = Path(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_unbound/{predictor}/kmeans_cluster_1")
 folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_pdbs_and_annotated_residue_data/unbound_annotated_results_copy")
 

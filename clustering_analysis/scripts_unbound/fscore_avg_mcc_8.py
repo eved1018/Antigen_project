@@ -1,4 +1,4 @@
-predictor = "dockpred"
+predictor = "xgboost"
 
 total_fscore = 0
 num_proteins = 0

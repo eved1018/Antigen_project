@@ -21,7 +21,7 @@ def split_pdb_line_original_pdb(item_line):
 
 
 vorffip_folder = Path("/Users/moshe/Desktop/Research_Antigen/Vorffip/Bound_work/Data/Bound_Galaxy-History-Unnamed-history/datasets_new")
-original_pdbs_folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/bound_pdbs_and_annotated_residue_data/bound_pdbs")
+original_pdbs_folder = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_pdbs_and_annotated_residue_data/unbound_pdbs")
 
 
 # for file in vorffip_folder.iterdir():

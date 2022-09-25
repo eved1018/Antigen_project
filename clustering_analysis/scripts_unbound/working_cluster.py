@@ -14,7 +14,7 @@ import pandas as pd
 from pathlib import Path
 import sys
 
-predictor = "dockpred"
+predictor = "xgboost"
 
 
 
