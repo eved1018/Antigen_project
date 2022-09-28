@@ -42,31 +42,31 @@ delete all
 
                 show sphere, annotated1
                 color pink, annotated1
-                set sphere_transparency, 0.5,annotated1
+                set sphere_transparency, 0.3,annotated1
                 show sphere, annotated2
                 color blue, annotated2
-                set sphere_transparency, 0.5,annotated2
+                set sphere_transparency, 0.3,annotated2
                 show sphere, annotated3
                 color aquamarine, annotated3
-                set sphere_transparency, 0.5,annotated3
+                set sphere_transparency, 0.3,annotated3
                 show sphere, annotated4
                 color br3, annotated4
-                set sphere_transparency, 0.5,annotated4
+                set sphere_transparency, 0.3,annotated4
                 show sphere, annotated5
                 color br6, annotated5
-                set sphere_transparency, 0.5,annotated5
+                set sphere_transparency, 0.3,annotated5
                 show sphere, annotated6
                 color br9, annotated6
-                set sphere_transparency, 0.5,annotated6
+                set sphere_transparency, 0.3,annotated6
                 show sphere, annotated7
                 color brightorange, annotated7
-                set sphere_transparency, 0.5,annotated7
+                set sphere_transparency, 0.3,annotated7
                 show sphere, annotated8
                 color deepsalmon, annotated8
-                set sphere_transparency, 0.5,annotated8
+                set sphere_transparency, 0.3,annotated8
                 show sphere, annotated9
                 color violet, annotated9
-                set sphere_transparency, 0.5,annotated9
+                set sphere_transparency, 0.3,annotated9
 
 
 
