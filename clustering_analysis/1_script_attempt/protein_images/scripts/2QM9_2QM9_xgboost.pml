@@ -29,7 +29,7 @@ delete all
                 select ann8, resi 
                 indicate bycalpha ann8
                 create annotated8, indicate
-                select ann9, resi 23+24+25+26+27+28+29+30+31+32+35+57+76+77+78+97+98+100+10000000000
+                select ann9, resi 
                 indicate bycalpha ann9
                 create annotated9, indicate
 
