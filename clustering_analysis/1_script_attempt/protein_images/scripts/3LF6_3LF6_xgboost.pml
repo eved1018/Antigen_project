@@ -20,7 +20,7 @@ delete all
                 select ann5, resi 
                 indicate bycalpha ann5
                 create annotated5, indicate
-                select ann6, resi 8+56+60+75+100+101+119+120+121+122+123+124+125+127+128
+                select ann6, resi 
                 indicate bycalpha ann6
                 create annotated6, indicate
                 select ann7, resi 

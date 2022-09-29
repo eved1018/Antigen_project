@@ -71,9 +71,9 @@ def Main(predictors,df,results_path,code):
     # proteins= ["1ACB.I","1AT3.A","1DE4.E","1BUH.A","1FC2.D"]
     # proteins= ["7CEI.A","1QOR.A","1B34.A"]
     # proteins= ["4XXH.A","2UTG.A","1KXP.D"]
-    os.mkdir(f"{results_folder}")
-    os.mkdir(f"{results_folder}/{folder}")
-    os.mkdir(f"{results_folder}/scripts")
+    # os.mkdir(f"{results_folder}")
+    # os.mkdir(f"{results_folder}/{folder}")
+    # os.mkdir(f"{results_folder}/scripts")
     for protein in proteins:
         pml_maker(protein,df,cutoff_csv,folder,path,predictors,results_folder)
 
@@ -90,7 +90,7 @@ def image_wrapper(args):
             filename = f"{results_folder}/{folder}/{protein}/{protein}_{predictor}.png"
             check = os.path.exists(filename)
 
-            if check  == False:
+            if check  == True:
                 total_script=f"""delete all 
                 fetch {protein}.{chain_name}
 
@@ -135,31 +135,31 @@ def image_wrapper(args):
 
                 show sphere, annotated1
                 color pink, annotated1
-                set sphere_transparency, 0.5,annotated1
+                set sphere_transparency, 0.3,annotated1
                 show sphere, annotated2
                 color blue, annotated2
-                set sphere_transparency, 0.5,annotated2
+                set sphere_transparency, 0.3,annotated2
                 show sphere, annotated3
                 color aquamarine, annotated3
-                set sphere_transparency, 0.5,annotated3
+                set sphere_transparency, 0.3,annotated3
                 show sphere, annotated4
                 color br3, annotated4
-                set sphere_transparency, 0.5,annotated4
+                set sphere_transparency, 0.3,annotated4
                 show sphere, annotated5
                 color br6, annotated5
-                set sphere_transparency, 0.5,annotated5
+                set sphere_transparency, 0.3,annotated5
                 show sphere, annotated6
                 color br9, annotated6
-                set sphere_transparency, 0.5,annotated6
+                set sphere_transparency, 0.3,annotated6
                 show sphere, annotated7
                 color brightorange, annotated7
-                set sphere_transparency, 0.5,annotated7
+                set sphere_transparency, 0.3,annotated7
                 show sphere, annotated8
                 color deepsalmon, annotated8
-                set sphere_transparency, 0.5,annotated8
+                set sphere_transparency, 0.3,annotated8
                 show sphere, annotated9
                 color violet, annotated9
-                set sphere_transparency, 0.5,annotated9
+                set sphere_transparency, 0.3,annotated9
 
 
 
@@ -229,14 +229,14 @@ def pml_maker(protein,df,cutoff_csv,folder,path,predictors,results_folder):
         for file_ann in folder_annotated.iterdir():
             if protein in file_ann.name:
 
-                if "1" in file_ann.name:
+                if "_1" in file_ann.name:
                     with open (file_ann) as infile_ann1:
                         annotated_list1 = []
                         for line_ann1 in infile_ann1:
                             annotated_list1.append(line_ann1.strip())
                     epitope1 = "+".join(annotated_list1)
                     # print(epitope1)
-                if "2" in file_ann.name:
+                if "_2" in file_ann.name:
                     with open (file_ann) as infile_ann2:
                         annotated_list2 = []
                         for line_ann2 in infile_ann2:
@@ -244,31 +244,31 @@ def pml_maker(protein,df,cutoff_csv,folder,path,predictors,results_folder):
                     print(annotated_list2, "hh")
                     epitope2 = "+".join(annotated_list2)
                     print(epitope2, "hhhh")
-                if "3" in file_ann.name:
+                if "_3" in file_ann.name:
                     with open (file_ann) as infile_ann3:
                         annotated_list3 = []
                         for line_ann3 in infile_ann3:
                             annotated_list3.append(line_ann3.strip())
                     epitope3 = "+".join(annotated_list3)
-                if "4" in file_ann.name:
+                if "_4" in file_ann.name:
                     with open (file_ann) as infile_ann4:
                         annotated_list4 = []
                         for line_ann4 in infile_ann4:
                             annotated_list4.append(line_ann4.strip())
                     epitope4 = "+".join(annotated_list4)
-                if "5" in file_ann.name:
+                if "_5" in file_ann.name:
                     with open (file_ann) as infile_ann5:
                         annotated_list5 = []
                         for line_ann5 in infile_ann5:
                             annotated_list5.append(line_ann5.strip())
                     epitope5 = "+".join(annotated_list5)
-                if "6" in file_ann.name:
+                if "_6" in file_ann.name:
                     with open (file_ann) as infile_ann6:
                         annotated_list6 = []
                         for line_ann6 in infile_ann6:
                             annotated_list6.append(line_ann6.strip())
                     epitope6 = "+".join(annotated_list6)
-                if "7" in file_ann.name:
+                if "_7" in file_ann.name:
                     with open (file_ann) as infile_ann7:
                         annotated_list7 = []
                         for line_ann7 in infile_ann7:
@@ -276,14 +276,14 @@ def pml_maker(protein,df,cutoff_csv,folder,path,predictors,results_folder):
                             annotated_list7.append("10000000000")
                     epitope7 = "+".join(annotated_list7)
                     
-                if "8" in file_ann.name:
+                if "_8" in file_ann.name:
                     with open (file_ann) as infile_ann8:
                         annotated_list8 = []
                         for line_ann8 in infile_ann8:
                             annotated_list8.append(line_ann8.strip())
                             annotated_list8.append("10000000000")
                     epitope8 = "+".join(annotated_list8)
-                if "9" in file_ann.name:
+                if "_9" in file_ann.name:
                     with open (file_ann) as infile_ann9:
                         annotated_list9 = []
                         for line_ann9 in infile_ann9:

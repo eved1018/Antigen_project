@@ -14,7 +14,7 @@ delete all
                 select ann3, resi 58+91+92+94+112+113+114+116+118+174
                 indicate bycalpha ann3
                 create annotated3, indicate
-                select ann4, resi 58+91+92+94+112+113+114+116+118+174
+                select ann4, resi 
                 indicate bycalpha ann4
                 create annotated4, indicate
                 select ann5, resi 
@@ -23,7 +23,7 @@ delete all
                 select ann6, resi 
                 indicate bycalpha ann6
                 create annotated6, indicate
-                select ann7, resi 58+91+92+94+112+113+114+116+118+174+10000000000
+                select ann7, resi 
                 indicate bycalpha ann7
                 create annotated7, indicate
                 select ann8, resi 
