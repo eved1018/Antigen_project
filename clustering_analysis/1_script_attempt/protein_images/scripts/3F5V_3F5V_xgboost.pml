@@ -17,7 +17,7 @@ delete all
                 select ann4, resi 
                 indicate bycalpha ann4
                 create annotated4, indicate
-                select ann5, resi 47+51+53+54+55+84+85+86+87+90+93+107+108+109+110+111+112+113+114+221+222
+                select ann5, resi 
                 indicate bycalpha ann5
                 create annotated5, indicate
                 select ann6, resi 
