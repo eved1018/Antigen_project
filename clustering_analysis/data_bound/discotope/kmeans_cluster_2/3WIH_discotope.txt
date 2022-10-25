@@ -1,7 +1,0 @@
-16P.txt
-17P.txt
-49P.txt
-48P.txt
-99P.txt
-72P.txt
-50P.txt

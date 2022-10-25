@@ -1,6 +1,4 @@
 367P.txt
-368P.txt
-382P.txt
 322P.txt
 297P.txt
 320P.txt

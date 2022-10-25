@@ -1,9 +1,0 @@
-16P.txt
-60P.txt
-9P.txt
-5P.txt
-4P.txt
-82P.txt
-7P.txt
-79P.txt
-36P.txt

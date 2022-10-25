@@ -16,9 +16,9 @@ with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antige
         protein = line2.strip().split(",")[1]
         list.append(protein)
 
-with open ("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/input/moshe_cv/input_data_moshe.csv") as infile:
+with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/meta-dpi_work/unbound_results/input_data_unbound_copy.csv") as infile:
     for line in infile:
         protein2 = (line.strip().split("_")[1][:4])
         if protein2 in list:
-            with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/meta-dpi_work/unbound_results/input_data_77_corresponding.csv", "a") as f:
+            with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/meta-dpi_work/unbound_results/input_data_10_18_corresponding.csv", "a") as f:
                 f.write(f"{line.strip()}\n")

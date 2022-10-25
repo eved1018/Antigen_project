@@ -1,8 +1,0 @@
-220P.txt
-281P.txt
-283P.txt
-282P.txt
-285P.txt
-252P.txt
-253P.txt
-284P.txt

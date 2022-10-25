@@ -7,6 +7,7 @@
 80P.txt
 221P.txt
 223P.txt
+82P.txt
 222P.txt
 51P.txt
 79P.txt
@@ -14,4 +15,3 @@
 53P.txt
 491P.txt
 246P.txt
-247P.txt
