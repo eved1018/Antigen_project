@@ -18,13 +18,13 @@ import sys
 
 
 
-df = pd.read_csv("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/unbound_cv_9_7/bin_frame.csv")
+df = pd.read_csv("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/11_4_duplicated_unbound_using_bound_CV/bin_frame.csv")
 cutoff_path = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cutoffs/unbound_cutoff.csv"
 # fscore_file = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/discotope/fscore_bound_disco.csv"
 
 
 
-path_starter = Path("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/unbound_cv_9_7/fscore_by_method")
+path_starter = Path("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/11_4_duplicated_unbound_using_bound_CV/fscore_by_method")
 for file_starter in path_starter.iterdir():
     predictor = file_starter.name[:-4]
     predictors =[predictor]
@@ -425,6 +425,12 @@ for file_starter in path_starter.iterdir():
             cluster_2_tp = int(line.strip().split(",")[6])
             distance = float(line.strip().split(",")[7])
             
+            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv", "a") as test_1:
+                    test_1.write(f"")
+            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as test_2:
+                    test_2.write(f"")
+            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_below_23A.csv", "a") as test_3:
+                    test_3.write(f"")
             #1
             with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv", "a") as outfile_1a:
                 outfile_1a.write("")
@@ -442,7 +448,7 @@ for file_starter in path_starter.iterdir():
                         outfile_3.write(f"{protein_1},{fscore_cluster_1},{cluster_1_size},{cluster_1_tp},clusters:1\n")
             
             #3
-            if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance <= 23):
+            if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance <= 10):
                 dynamic_cutoff = cluster_2_size + cluster_1_size
                 with open(fscore_file) as infile_fscore:
                     for item in infile_fscore:
@@ -453,7 +459,7 @@ for file_starter in path_starter.iterdir():
 
             #4
 
-            if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance > 23):
+            if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance > 10):
                 if cluster_2_size > cluster_1_size:
                     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as outfile_5:
                         outfile_5.write(f"{protein_1},{fscore_cluster_2},{cluster_2_size},{cluster_2_tp},clusters:2\n")                
@@ -582,5 +588,5 @@ for file_starter in path_starter.iterdir():
                                     mcc_a = MCC_num_a / mcc_denom_a
                                     mcc_tot = mcc_tot + mcc_a
     mcc_final = mcc_tot/i
-    with open ("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/unbound_cv_9_7/clustering_results.txt", "a") as f1:
+    with open ("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/11_4_duplicated_unbound_using_bound_CV/clustering_results.txt", "a") as f1:
         f1.write(f"{predictor},{str(round(total_fscore/num_proteins,4))},{mcc_final},{num_proteins}\n")

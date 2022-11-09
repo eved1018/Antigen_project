@@ -15,11 +15,11 @@ from pathlib import Path
 import sys
 
 #vorffip, dockpred, meta-ppisp/metappisp...
-df = pd.read_csv("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/3_fold_cv_9_7/bin_frame.csv")
+df = pd.read_csv("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/10_19_CV_mixed/bin_frame.csv")
 cutoff_path = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cutoffs/bound_cutoff.csv"
 # fscore_file = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/discotope/fscore_bound_disco.csv"
 
-path_starter = Path("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/3_fold_cv_9_7/fscore_by_method")
+path_starter = Path("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/10_19_CV_mixed/fscore_by_method")
 for file_starter in path_starter.iterdir():
     predictor = file_starter.name[:-4]
     predictors =[predictor]
@@ -434,10 +434,19 @@ for file_starter in path_starter.iterdir():
             cluster_2_size = int(line.strip().split(",")[5])
             cluster_2_tp = int(line.strip().split(",")[6])
             distance = float(line.strip().split(",")[7])
-            
+            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt/data_bound/{predictor}/zero_tp_both_clusters.csv", "a") as test1:
+                test1.write(f"")
+                test1.close()
+            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt/data_bound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as test2:
+                test2.write(f"")
+                test2.close()
+            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt/data_bound/{predictor}/both_clusters_nonzero_tp_below_23A.csv", "a") as test3:
+                test3.write(f"")
+                test3.close()
+
             #1
             if ((cluster_1_tp == 0) and (cluster_2_tp == 0)):
-                with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt/data_bound/{predictor}/zero_tp_both_clusters.csv", "a") as outfile_1:
+                with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt/data_bound/{predictor}/both_clusters_nonzero_tp_below_23A.csv", "a") as outfile_1:
                     outfile_1.write(f"{line.strip()}\n")
             
             #2
@@ -450,13 +459,8 @@ for file_starter in path_starter.iterdir():
                         outfile_3.write(f"{protein_1},{fscore_cluster_1},{cluster_1_size},{cluster_1_tp},clusters:1\n")
             
             #3
-            if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance <= 23):
+            if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance <= 10):
                 dynamic_cutoff = cluster_2_size + cluster_1_size
-                # #sppider
-                # with open("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/moshe_3_fold_test/fscore_mcc_by_protein.csv") as infile_fscore:
-                #     for item in infile_fscore:
-                #         if str(item.strip().split(",")[0]) == str(protein_1):
-                #             fscore_dynamic = item.strip().split(",")[13]
                 
                 with open(fscore_file) as infile_fscore:
                     for item in infile_fscore:
@@ -476,7 +480,7 @@ for file_starter in path_starter.iterdir():
 
             #4
 
-            if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance > 23):
+            # if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance > 10):
                 if cluster_2_size > cluster_1_size:
                     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt/data_bound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as outfile_5:
                         outfile_5.write(f"{protein_1},{fscore_cluster_2},{cluster_2_size},{cluster_2_tp},clusters:2\n")                
@@ -605,5 +609,5 @@ for file_starter in path_starter.iterdir():
                                     mcc_a = MCC_num_a / mcc_denom_a
                                     mcc_tot = mcc_tot + mcc_a
     mcc_final = mcc_tot/i
-    with open ("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/3_fold_cv_9_7/clustering_results.txt", "a") as f1:
+    with open ("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/10_19_CV_mixed/clustering_results.txt", "a") as f1:
         f1.write(f"{predictor},{str(round(total_fscore/num_proteins,4))},{mcc_final},{num_proteins}\n")

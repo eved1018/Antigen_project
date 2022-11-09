@@ -1,8 +1,0 @@
-101P.txt
-62P.txt
-61P.txt
-75P.txt
-73P.txt
-45P.txt
-46P.txt
-47P.txt

@@ -5,14 +5,14 @@ import pandas as pd
 from pathlib import Path
 import sys
 folder_chain = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_pdbs_and_annotated_residue_data/unbound_annotated_results_copy")
-folder_pred = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/xgboost/kmeans_cluster_1")
-folder_pred_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/data_bound/xgboost/kmeans_cluster_2")
+folder_pred = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/xgboost/kmeans_cluster_1")
+folder_pred_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/xgboost/kmeans_cluster2")
 folder_pdb_name = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/bound_data/bound_pdbs")
 def test():
     predictors = ['xgboost']
     df = pd.read_csv("/Users/moshe/Desktop/Research_MetaDPI/antigen_data/xgboost_bound.txt")
     #df.set_index('residue', inplace= True )
-    results_path = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/analysis_of_zero_fscores/xgboost/hema_images/xgboost"
+    results_path = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/multiple_epitope_work/results"
     code = 1
     Main(predictors,df,results_path,code)
 
@@ -27,7 +27,7 @@ def Main(predictors,df,results_path,code):
         return
 
     path = Path(__file__).parents[2]
-    results_folder = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/analysis_of_zero_fscores/xgboost/hema_images/xgboost"
+    results_folder = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/multiple_epitope_work/results"
     # results_folder = f"{results_path}/"
     folder = "Images"
     # df = Df_maker(path)
