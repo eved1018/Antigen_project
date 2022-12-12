@@ -4,12 +4,10 @@
 475P.txt
 548P.txt
 546P.txt
-547P.txt
 545P.txt
 544P.txt
 492P.txt
 486P.txt
-479P.txt
 484P.txt
 655P.txt
 480P.txt

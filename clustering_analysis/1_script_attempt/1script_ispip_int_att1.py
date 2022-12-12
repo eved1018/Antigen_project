@@ -14,12 +14,13 @@ import pandas as pd
 from pathlib import Path
 import sys
 
+output_input = "10_20_CV_unbound_test_bound"
 #vorffip, dockpred, meta-ppisp/metappisp...
-df = pd.read_csv("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/10_19_CV_mixed/bin_frame.csv")
+df = pd.read_csv(f"/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/{output_input}/bin_frame.csv")
 cutoff_path = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cutoffs/bound_cutoff.csv"
 # fscore_file = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/discotope/fscore_bound_disco.csv"
 
-path_starter = Path("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/10_19_CV_mixed/fscore_by_method")
+path_starter = Path(f"/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/{output_input}/fscore_by_method")
 for file_starter in path_starter.iterdir():
     predictor = file_starter.name[:-4]
     predictors =[predictor]
@@ -480,7 +481,7 @@ for file_starter in path_starter.iterdir():
 
             #4
 
-            # if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance > 10):
+            if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance > 10):
                 if cluster_2_size > cluster_1_size:
                     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt/data_bound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as outfile_5:
                         outfile_5.write(f"{protein_1},{fscore_cluster_2},{cluster_2_size},{cluster_2_tp},clusters:2\n")                
@@ -609,5 +610,5 @@ for file_starter in path_starter.iterdir():
                                     mcc_a = MCC_num_a / mcc_denom_a
                                     mcc_tot = mcc_tot + mcc_a
     mcc_final = mcc_tot/i
-    with open ("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/10_19_CV_mixed/clustering_results.txt", "a") as f1:
+    with open (f"/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/{output_input}/clustering_results.txt", "a") as f1:
         f1.write(f"{predictor},{str(round(total_fscore/num_proteins,4))},{mcc_final},{num_proteins}\n")

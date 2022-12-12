@@ -10,12 +10,13 @@ folder_pred = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_update
 folder_pred_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/xgboost/kmeans_cluster_2")
 folder_pdb_name = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_pdbs_and_annotated_residue_data/unbound_pdbs")
 
-results_folder = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/multiple_epitope_work/results"
-list_unbound_proteins = []
+results_folder = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/multiple_epitope_work/v2/results"
+list_bound_proteins = []
 for file in folder_pred.iterdir():
-    list_unbound_proteins.append(file.name[:4])
+    list_bound_proteins.append(file.name[:4])
 
-for item in list_unbound_proteins:
+
+for item in list_bound_proteins:
     cluster1 = []
     cluster2 = []
     for file_1 in folder_pred.iterdir():
@@ -38,6 +39,8 @@ for item in list_unbound_proteins:
         if item in file_pdb.name:
             unbound_chain = file_pdb.name[-5:-4]
             bound_protein = file_pdb.name[-17:-13]
+            unbound_protein = file_pdb.name[-10:-6]
+
 
             for file_ann in folder_chain.iterdir():
                 if bound_protein in file_ann.name:
@@ -52,7 +55,7 @@ for item in list_unbound_proteins:
                     os.mkdir(f"{results_folder}/{bound_protein}")
                     filename = f"{results_folder}/{bound_protein}/{bound_protein}_xgboost.png"
                     total_script=f"""delete all 
-                    fetch {item}.{unbound_chain}
+                    fetch {unbound_protein}.{unbound_chain}
                     color blue 
                     set cartoon_transparency,0.75
                     select ann, resi {"+".join(list_ann)}

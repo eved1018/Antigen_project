@@ -17,14 +17,14 @@ import sys
 
 
 
-
-df = pd.read_csv("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/11_4_duplicated_unbound_using_bound_CV/bin_frame.csv")
+output_input = "12_6_CV_Bound_test_unbound_hema"
+df = pd.read_csv(f"/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/{output_input}/bin_frame.csv")
 cutoff_path = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cutoffs/unbound_cutoff.csv"
 # fscore_file = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/discotope/fscore_bound_disco.csv"
 
 
 
-path_starter = Path("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/11_4_duplicated_unbound_using_bound_CV/fscore_by_method")
+path_starter = Path(f"/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/{output_input}/fscore_by_method")
 for file_starter in path_starter.iterdir():
     predictor = file_starter.name[:-4]
     predictors =[predictor]
@@ -588,5 +588,5 @@ for file_starter in path_starter.iterdir():
                                     mcc_a = MCC_num_a / mcc_denom_a
                                     mcc_tot = mcc_tot + mcc_a
     mcc_final = mcc_tot/i
-    with open ("/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/11_4_duplicated_unbound_using_bound_CV/clustering_results.txt", "a") as f1:
+    with open (f"/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/{output_input}/clustering_results.txt", "a") as f1:
         f1.write(f"{predictor},{str(round(total_fscore/num_proteins,4))},{mcc_final},{num_proteins}\n")

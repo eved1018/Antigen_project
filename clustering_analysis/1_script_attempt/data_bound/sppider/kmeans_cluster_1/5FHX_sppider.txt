@@ -2,11 +2,9 @@
 61P.txt
 64P.txt
 70P.txt
-58P.txt
 71P.txt
 73P.txt
 67P.txt
 66P.txt
-72P.txt
 68P.txt
 69P.txt
