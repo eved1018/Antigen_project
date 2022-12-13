@@ -1,0 +1,10 @@
+1. Zheng D, Liang S, Zhang C. B-Cell Epitope Predictions Using Computational Methods. Methods Mol Biol. 2023;2552:239-254. doi:10.1007/978-1-0716-2609-2_12
+2. Kringelum JV, Lundegaard C, Lund O, Nielsen M. Reliable B cell epitope predictions: impacts of method development and improved benchmarking. PLoS Comput Biol. 2012;8(12):e1002829. doi:10.1371/journal.pcbi.1002829
+3. Walder M, Edelstein E, Carroll M, et al. Integrated structure-based protein interface prediction. BMC Bioinformatics. 2022;23(1):301. Published 2022 Jul 25. doi:10.1186/s12859-022-04852-2
+4. Jespersen MC, Mahajan S, Peters B, Nielsen M, Marcatili P. Antibody Specific B-Cell Epitope Predictions: Leveraging Information From Antibody-Antigen Protein Complexes. Front Immunol. 2019;10:298. Published 2019 Feb 26. doi:10.3389/fimmu.2019.00298
+5. Porollo A, Meller J. Prediction-based fingerprints of protein-protein interactions. Proteins. 2007;66(3):630-645. doi:10.1002/prot.21248
+6. Savojardo C, Fariselli P, Martelli PL, Casadio R. ISPRED4: interaction sites PREDiction in protein structures with a refining grammar model. Bioinformatics. 2017;33(11):1656-1663. doi:10.1093/bioinformatics/btx044
+7. Viswanathan R, Fajardo E, Steinberg G, Haller M, Fiser A. Protein-protein binding supersites. PLoS Comput Biol. 2019;15(1):e1006704. Published 2019 Jan 7. doi:10.1371/journal.pcbi.1006704
+8. Zhang, Q.C., et al. PredUs: a web server for predicting protein interfaces using structural neighbors. Nucleic Acids Res, 2011. 39(Web Server issue): p. W283–7.
+9. Saito T, Rehmsmeier M. The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets. PLoS ONE. 2015;10(3): e0118432.
+10. Vergara IA, et al. StAR: a simple tool for the statistical comparison of ROC curves. BMC Bioinform. 2008;9:265.
