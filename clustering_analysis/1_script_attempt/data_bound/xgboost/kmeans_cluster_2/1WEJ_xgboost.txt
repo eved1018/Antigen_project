@@ -1,11 +1,5 @@
 28P.txt
 16P.txt
-48P.txt
-43P.txt
-42P.txt
-45P.txt
-50P.txt
-46P.txt
-47P.txt
-26P.txt
+13P.txt
+10P.txt
 27P.txt

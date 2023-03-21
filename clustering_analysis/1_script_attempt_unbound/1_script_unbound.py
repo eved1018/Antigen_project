@@ -17,16 +17,17 @@ import sys
 
 
 
-output_input = "12_6_CV_Bound_test_unbound_hema"
-df = pd.read_csv(f"/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/{output_input}/bin_frame.csv")
+output_input = "multiple_epitopes_3_16"
+df = pd.read_csv(f"/Users/moshe/Desktop/Research_MetaDPI/ISPIP-main/Data/output/{output_input}/bin_frame.csv")
 cutoff_path = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cutoffs/unbound_cutoff.csv"
 # fscore_file = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/discotope/fscore_bound_disco.csv"
 
 
 
-path_starter = Path(f"/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/{output_input}/fscore_by_method")
+path_starter = Path(f"/Users/moshe/Desktop/Research_MetaDPI/ISPIP-main/Data/output/{output_input}/fscore_by_method")
 for file_starter in path_starter.iterdir():
     predictor = file_starter.name[:-4]
+    predictor = "xgboost"
     predictors =[predictor]
     fscore_file = file_starter
     os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}")
@@ -36,6 +37,7 @@ for file_starter in path_starter.iterdir():
 
 
     def pml_predicted(protein,cutoff_csv,df,item_predictor):
+        print(protein)
         frame = df[df["protein"] == protein]
         cutoff_row = cutoff_csv[cutoff_csv["Protein"] == protein]
         threshhold = cutoff_row["cutoff res"].values[0]
@@ -52,13 +54,17 @@ for file_starter in path_starter.iterdir():
 
     for item_predictor in predictors:
         for protein in proteins:
-            pred_res_list= pml_predicted(protein,cutoff_csv,df,item_predictor)
-            os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/{protein}")
-            os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/{protein}/predicted_residues/")
+            try:
+                pred_res_list= pml_predicted(protein,cutoff_csv,df,item_predictor)
+                os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/{protein}")
+                os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/{protein}/predicted_residues/")
 
-            with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/{protein}/{protein}_unbound_predicted_residues.txt", 'a') as f:
-                f.write(f"{pred_res_list}")
-    print("pred_list_complete")
+                with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/{protein}/{protein}_unbound_predicted_residues.txt", 'a') as f:
+                    f.write(f"{pred_res_list}")
+            except:
+                pass
+        print("pred_list_complete")
+
 
 
     def split_pdb_line(line):
@@ -141,13 +147,17 @@ for file_starter in path_starter.iterdir():
 
 
 
+    os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_1")
+    os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_2")
+    os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_3")
+    os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_4")
+    os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_5")
 
 
 
     
 
-    os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_1")
-    os.mkdir(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_2")
+
 
     def remove(string):
         # get rid of the spaces in the list and turn it into a string. returns the list
@@ -168,35 +178,40 @@ for file_starter in path_starter.iterdir():
         Z = linkage(data, method='ward')
         
         # fig = plt.figure(figsize=(5, 5))
+        dend = shc.dendrogram(shc.linkage(data, method='ward'))
+        print(dend['color_list'])
+        unique_colors=set(dend['color_list'])
         
+        optimal_num = len(unique_colors) -1    
         # dn = dendrogram(Z,
         #             orientation='top',
         #             distance_sort='descending',
         #             show_leaf_counts=True)
 
         # cluster!
-        numCl = 2
-        cluster = KMeans(n_clusters=2, random_state=0)
+        cluster = AgglomerativeClustering(n_clusters=optimal_num, affinity='euclidean', linkage='ward', compute_full_tree=True, distance_threshold=None)
         
         cluster.fit_predict(data)    
         oneli = cluster.labels_
         if len(oneli) != len(data):
             print(" the len(oneli) is not equal to len(data)")
-            
+        print(oneli)
+        print(data)
         # this is a scatter plot of the data
         # plt.figure(figsize=(10, 7))
         # plt.scatter(data[:,0],data[:,1], c=cluster.labels_, cmap='rainbow')
         # plt.show()
         
 
-        # plt.figure(figsize=(10, 7))
-        # plt.title("1A2Y")
-        # dend = shc.dendrogram(shc.linkage(data, method='ward'))
-        # plt.show()
+        plt.figure(figsize=(10, 7))
+        plt.title(file_2.name)
+        dend = shc.dendrogram(shc.linkage(data, method='ward'))
+        plt.show()
 
         
-        cluster1, cluster2, data = getClusterList(oneli)
-        averageXYZ(cluster1, cluster2, data)
+        cluster1, cluster2, cluster3, cluster4, cluster5, data = getClusterList(oneli)
+        # needs to be fixed, not distance between just 2 but all other options
+        averageXYZ(cluster1, cluster2, cluster3, cluster4, cluster5, data)
         
 
     def getClusterList(ones):
@@ -207,6 +222,9 @@ for file_starter in path_starter.iterdir():
         data = dataset.iloc[:, :].values
         clu1 = []
         clu2 = []
+        clu3 = []
+        clu4 = []
+        clu5 = []
         ones = remove(ones)
 
         for row in range(len(data)):
@@ -219,43 +237,50 @@ for file_starter in path_starter.iterdir():
                 
             elif cluster == '1':
                 clu2 += [resNum]
+            elif cluster == '2':
+                clu3 += [resNum]
+            elif cluster == '3':
+                clu4 += [resNum]
+            elif cluster == '4':
+                clu5 += [resNum]
             else:
                 pass
         
-        # print("cluster 1 is", clu1)
-        # print("cluster 2 is",clu2)
-        return clu1, clu2, data
-        
-    def averageXYZ(cluster1, cluster2, data):
+        print("cluster 1 is", clu1)
+        print("cluster 2 is",clu2)
+        print("cluster 3 is", clu3)
+        return clu1, clu2, clu3, clu4, clu5, data
+   
+    def averageXYZ(cluster1, cluster2, cluster3, cluster4, cluster5, data):
         # should print averages in the end
-        sumClus1X = 0
-        sumClus2X = 0
-        sumClus1Y = 0
-        sumClus2Y = 0
-        sumClus1Z = 0
-        sumClus2Z = 0
+        # sumClus1X = 0
+        # sumClus2X = 0
+        # sumClus1Y = 0
+        # sumClus2Y = 0
+        # sumClus1Z = 0
+        # sumClus2Z = 0
 
-        for row in data:
-            # add the X to the data 
-            if row[0] in cluster1:
-                sumClus1X += row[1]
-                sumClus1Y += row[2]
-                sumClus1Z += row[3]
+        # for row in data:
+        #     # add the X to the data 
+        #     if row[0] in cluster1:
+        #         sumClus1X += row[1]
+        #         sumClus1Y += row[2]
+        #         sumClus1Z += row[3]
                 
-            if row[0] in cluster2:
-                sumClus2X += row[1]
-                sumClus2Y += row[2]
-                sumClus2Z += row[3]
+        #     if row[0] in cluster2:
+        #         sumClus2X += row[1]
+        #         sumClus2Y += row[2]
+        #         sumClus2Z += row[3]
         
-        xcoordinate_1 = (sumClus1X/len(cluster1))
-        ycoordinate_1 = (sumClus1Y/len(cluster1))
-        zcoordinate_1 = (sumClus1Z/len(cluster1))
+        # xcoordinate_1 = (sumClus1X/len(cluster1))
+        # ycoordinate_1 = (sumClus1Y/len(cluster1))
+        # zcoordinate_1 = (sumClus1Z/len(cluster1))
         
-        xcoordinate_2 = (sumClus2X/len(cluster2))
-        ycoordinate_2 = (sumClus2Y/len(cluster2))
-        zcoordinate_2 = (sumClus2Z/len(cluster2))
+        # xcoordinate_2 = (sumClus2X/len(cluster2))
+        # ycoordinate_2 = (sumClus2Y/len(cluster2))
+        # zcoordinate_2 = (sumClus2Z/len(cluster2))
 
-        dis_total_1_2 = round((((((xcoordinate_1)-(xcoordinate_2))**2) + (((ycoordinate_1)-(ycoordinate_2))**2) +(((zcoordinate_1)-(zcoordinate_2))**2))**.5),4)
+        # dis_total_1_2 = round((((((xcoordinate_1)-(xcoordinate_2))**2) + (((ycoordinate_1)-(ycoordinate_2))**2) +(((zcoordinate_1)-(zcoordinate_2))**2))**.5),4)
 
         
 
@@ -265,11 +290,16 @@ for file_starter in path_starter.iterdir():
 
 
         string_clu1 = "\n".join(cluster1)
+        string_clu3 = "\n".join(cluster3)
+        string_clu4 = "\n".join(cluster4)
+        string_clu5 = "\n".join(cluster5)
 
-        predicted_occurences_clu1 = string_clu1.count("P")
-        total_occurences_clu1 = string_clu1.count(".txt")
+        # predicted_occurences_clu1 = string_clu1.count("P")
+        # total_occurences_clu1 = string_clu1.count(".txt")
         #annotated_occurences_clu1 = int(total_occurences_clu1) - int(predicted_occurences_clu1)
-        
+        clu3_length = len(cluster3)
+        clu4_length = len(cluster4)
+        clu5_length = len(cluster5)
         clu1_length = len(cluster1)
         clu2_length = len(cluster2)
         string_clu2 = "\n".join(cluster2)
@@ -277,7 +307,7 @@ for file_starter in path_starter.iterdir():
 
         protein_name = file.name[:4]
         if protein_name == protein:
-            with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cutoffs/unbound_cutoff.csv") as infile_4:
+            with open (cutoff_path) as infile_4:
                 for fire_medic in infile_4:
                     if fire_medic.strip().split(",")[0] == protein_name:
                         dynamic_cutoff = fire_medic.strip().split(",")[2]
@@ -285,8 +315,14 @@ for file_starter in path_starter.iterdir():
                             outfile_1.write(f"{string_clu1}")
                         with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_2/{protein_name}_{predictor}.txt", "a") as outfile_2:
                             outfile_2.write(f"{string_clu2}")
+                        with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_3/{protein_name}_{predictor}.txt", "a") as outfile_3:
+                            outfile_3.write(f"{string_clu3}")
+                        with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_4/{protein_name}_{predictor}.txt", "a") as outfile_4:
+                            outfile_4.write(f"{string_clu4}")
+                        with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_5/{protein_name}_{predictor}.txt", "a") as outfile_5:
+                            outfile_5.write(f"{string_clu5}")
                         with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/{predictor}_kmeans_clustering_results.csv", "a") as outfile:
-                            outfile.write(f"{protein},{dynamic_cutoff},{clu1_length},{clu2_length},{dis_total_1_2}\n")
+                            outfile.write(f"{protein},{dynamic_cutoff},{clu1_length},{clu2_length},{clu3_length},{clu4_length},{clu5_length}\n")
 
     def main():
         cluster()
@@ -394,199 +430,333 @@ for file_starter in path_starter.iterdir():
 
 
 
-    with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/cluster_1_outfile.csv") as infile_1:
-        for line in infile_1:
-            protein = line.strip().split(",")[0]
-            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/cluster_2_outfile.csv") as infile_2:
-                for item in infile_2:
-                    protein_2 = item.strip().split(",")[0]
-                    parta = item.strip().split(",")[1]
-                    partb = item.strip().split(",")[2]
-                    partc = item.strip().split(",")[3]
-                    if protein_2 == protein:
-                        with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/{predictor}_kmeans_clustering_results.csv") as infile_3:
-                            for tonka in infile_3:
-                                if protein_2 == tonka.strip().split(",")[0]:
-                                    distance = tonka.strip().split(",")[4]
-                                    with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/merged_cluster_outfile.csv", "a") as outfile:
-                                        outfile.write(f"{line.strip()},{parta},{partb},{partc},{distance}\n")
-#7
 
 
 
-    with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/merged_cluster_outfile.csv") as infile_1:
-        for line in infile_1:
-            protein_1 = line.strip().split(",")[0]
-            fscore_cluster_1 = float(line.strip().split(",")[1])
-            cluster_1_size = int(line.strip().split(",")[2])
-            cluster_1_tp = int(line.strip().split(",")[3])
-            fscore_cluster_2 = float(line.strip().split(",")[4])
-            cluster_2_size = int(line.strip().split(",")[5])
-            cluster_2_tp = int(line.strip().split(",")[6])
-            distance = float(line.strip().split(",")[7])
+
+    folder_cluster_1 = Path(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_3")
+    folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_pdbs_and_annotated_residue_data/unbound_annotated_results_copy")
+
+    for file_1 in folder_cluster_1.iterdir():
+        protein_name_1 = file_1.name[:4]
+        combined_list_final = []
+        tot_TP = 0
+        with open(file_1) as infile_1:
+            for line_1 in infile_1:
+                cluster_1_predicted_residue = (line_1.strip()[:-5])
+                combined_list_final.append(cluster_1_predicted_residue)
+
+            for item in folder_2.iterdir():
+                if item.name[:4] == protein_name_1:
+                    for i2 in combined_list_final:
+                        with open (item) as infile_2:
+                            for line_2 in infile_2:
+                                if str(i2.strip()) == str(line_2.strip().split(" ")[0]):
+
+                                    tot_TP = tot_TP + 1
+                    #fix this
+
+
+            with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/ispred/unbound_ispred_fscores.txt") as infile_3:
+                for tonka in infile_3:
+                    protein = tonka.strip().split(",")[0]
+                    if protein == protein_name_1:
+                        tot_annotated = tonka.strip().split(",")[1]
+
+                        Fn = int(tot_annotated) - int(tot_TP)
+                        Fp = int(len(combined_list_final)) - int(tot_TP)
+                        bottom_half= float(tot_TP + (.5*Fn) +(Fp*.5))
+                        fscore = round((tot_TP/bottom_half),4)
+                    
+
+
+                        print(f"{protein},{fscore},{len(combined_list_final)},{tot_TP}")
+                        with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/cluster_3_outfile.csv", "a") as outfile:
+                            outfile.write(f"{protein},{fscore},{len(combined_list_final)},{tot_TP}\n")
+
+
+
+
+
+    folder_cluster_1 = Path(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_4")
+    folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_pdbs_and_annotated_residue_data/unbound_annotated_results_copy")
+
+    for file_1 in folder_cluster_1.iterdir():
+        protein_name_1 = file_1.name[:4]
+        combined_list_final = []
+        tot_TP = 0
+        with open(file_1) as infile_1:
+            for line_1 in infile_1:
+                cluster_1_predicted_residue = (line_1.strip()[:-5])
+                combined_list_final.append(cluster_1_predicted_residue)
+
+            for item in folder_2.iterdir():
+                if item.name[:4] == protein_name_1:
+                    for i2 in combined_list_final:
+                        with open (item) as infile_2:
+                            for line_2 in infile_2:
+                                if str(i2.strip()) == str(line_2.strip().split(" ")[0]):
+
+                                    tot_TP = tot_TP + 1
+                    #fix this
+
+
+            with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/ispred/unbound_ispred_fscores.txt") as infile_3:
+                for tonka in infile_3:
+                    protein = tonka.strip().split(",")[0]
+                    if protein == protein_name_1:
+                        tot_annotated = tonka.strip().split(",")[1]
+
+                        Fn = int(tot_annotated) - int(tot_TP)
+                        Fp = int(len(combined_list_final)) - int(tot_TP)
+                        bottom_half= float(tot_TP + (.5*Fn) +(Fp*.5))
+                        fscore = round((tot_TP/bottom_half),4)
+                    
+
+
+                        print(f"{protein},{fscore},{len(combined_list_final)},{tot_TP}")
+                        with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/cluster_4_outfile.csv", "a") as outfile:
+                            outfile.write(f"{protein},{fscore},{len(combined_list_final)},{tot_TP}\n")
+
+
+
+
+
+
+
+    folder_cluster_1 = Path(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/kmeans_cluster_5")
+    folder_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/unbound_pdbs_and_annotated_residue_data/unbound_annotated_results_copy")
+
+    for file_1 in folder_cluster_1.iterdir():
+        protein_name_1 = file_1.name[:4]
+        combined_list_final = []
+        tot_TP = 0
+        with open(file_1) as infile_1:
+            for line_1 in infile_1:
+                cluster_1_predicted_residue = (line_1.strip()[:-5])
+                combined_list_final.append(cluster_1_predicted_residue)
+
+            for item in folder_2.iterdir():
+                if item.name[:4] == protein_name_1:
+                    for i2 in combined_list_final:
+                        with open (item) as infile_2:
+                            for line_2 in infile_2:
+                                if str(i2.strip()) == str(line_2.strip().split(" ")[0]):
+
+                                    tot_TP = tot_TP + 1
+                    #fix this
+
+
+            with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/ispred/unbound_ispred_fscores.txt") as infile_3:
+                for tonka in infile_3:
+                    protein = tonka.strip().split(",")[0]
+                    if protein == protein_name_1:
+                        tot_annotated = tonka.strip().split(",")[1]
+
+                        Fn = int(tot_annotated) - int(tot_TP)
+                        Fp = int(len(combined_list_final)) - int(tot_TP)
+                        bottom_half= float(tot_TP + (.5*Fn) +(Fp*.5))
+                        fscore = round((tot_TP/bottom_half),4)
+                    
+
+
+                        print(f"{protein},{fscore},{len(combined_list_final)},{tot_TP}")
+                        with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/cluster_5_outfile.csv", "a") as outfile:
+                            outfile.write(f"{protein},{fscore},{len(combined_list_final)},{tot_TP}\n")
+
+#     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/cluster_1_outfile.csv") as infile_1:
+#         for line in infile_1:
+#             protein = line.strip().split(",")[0]
+#             with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/cluster_2_outfile.csv") as infile_2:
+#                 for item in infile_2:
+#                     protein_2 = item.strip().split(",")[0]
+#                     parta = item.strip().split(",")[1]
+#                     partb = item.strip().split(",")[2]
+#                     partc = item.strip().split(",")[3]
+#                     if protein_2 == protein:
+#                         with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/{predictor}_kmeans_clustering_results.csv") as infile_3:
+#                             for tonka in infile_3:
+#                                 if protein_2 == tonka.strip().split(",")[0]:
+#                                     distance = tonka.strip().split(",")[4]
+#                                     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/merged_cluster_outfile.csv", "a") as outfile:
+#                                         outfile.write(f"{line.strip()},{parta},{partb},{partc},{distance}\n")
+# #7
+
+
+
+#     with open(f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/merged_cluster_outfile.csv") as infile_1:
+#         for line in infile_1:
+#             protein_1 = line.strip().split(",")[0]
+#             fscore_cluster_1 = float(line.strip().split(",")[1])
+#             cluster_1_size = int(line.strip().split(",")[2])
+#             cluster_1_tp = int(line.strip().split(",")[3])
+#             fscore_cluster_2 = float(line.strip().split(",")[4])
+#             cluster_2_size = int(line.strip().split(",")[5])
+#             cluster_2_tp = int(line.strip().split(",")[6])
+#             distance = float(line.strip().split(",")[7])
             
-            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv", "a") as test_1:
-                    test_1.write(f"")
-            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as test_2:
-                    test_2.write(f"")
-            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_below_23A.csv", "a") as test_3:
-                    test_3.write(f"")
-            #1
-            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv", "a") as outfile_1a:
-                outfile_1a.write("")
-            if ((cluster_1_tp == 0) and (cluster_2_tp == 0)):
-                with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv", "a") as outfile_1:
-                    outfile_1.write(f"{line.strip()}\n")
+#             with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv", "a") as test_1:
+#                     test_1.write(f"")
+#             with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as test_2:
+#                     test_2.write(f"")
+#             with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_below_23A.csv", "a") as test_3:
+#                     test_3.write(f"")
+#             #1
+#             with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv", "a") as outfile_1a:
+#                 outfile_1a.write("")
+#             if ((cluster_1_tp == 0) and (cluster_2_tp == 0)):
+#                 with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv", "a") as outfile_1:
+#                     outfile_1.write(f"{line.strip()}\n")
             
-            #2
-            if ((cluster_2_tp != 0) and (cluster_1_tp == 0)) or ((cluster_1_tp != 0) and (cluster_2_tp == 0)):
-                if cluster_2_tp !=0:
-                    with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/only_one_cluster_nonzero_tp.csv", "a") as outfile_2:
-                        outfile_2.write(f"{protein_1},{fscore_cluster_2},{cluster_2_size},{cluster_2_tp},clusters:2\n")
-                if cluster_1_tp !=0:
-                    with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/only_one_cluster_nonzero_tp.csv", "a") as outfile_3:
-                        outfile_3.write(f"{protein_1},{fscore_cluster_1},{cluster_1_size},{cluster_1_tp},clusters:1\n")
+#             #2
+#             if ((cluster_2_tp != 0) and (cluster_1_tp == 0)) or ((cluster_1_tp != 0) and (cluster_2_tp == 0)):
+#                 if cluster_2_tp !=0:
+#                     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/only_one_cluster_nonzero_tp.csv", "a") as outfile_2:
+#                         outfile_2.write(f"{protein_1},{fscore_cluster_2},{cluster_2_size},{cluster_2_tp},clusters:2\n")
+#                 if cluster_1_tp !=0:
+#                     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/only_one_cluster_nonzero_tp.csv", "a") as outfile_3:
+#                         outfile_3.write(f"{protein_1},{fscore_cluster_1},{cluster_1_size},{cluster_1_tp},clusters:1\n")
             
-            #3
-            if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance <= 10):
-                dynamic_cutoff = cluster_2_size + cluster_1_size
-                with open(fscore_file) as infile_fscore:
-                    for item in infile_fscore:
-                        if str(item.strip().split(",")[0]) == str(protein_1):
-                            fscore_dynamic = item.strip().split(",")[1]
-                            with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_below_23A.csv", "a") as outfile_4:
-                                outfile_4.write(f"{protein_1},{fscore_dynamic},{dynamic_cutoff},{(int(cluster_2_tp)+int(cluster_1_tp))},clusters:1_2\n")
+#             #3
+#             if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance <= 10):
+#                 dynamic_cutoff = cluster_2_size + cluster_1_size
+#                 with open(fscore_file) as infile_fscore:
+#                     for item in infile_fscore:
+#                         if str(item.strip().split(",")[0]) == str(protein_1):
+#                             fscore_dynamic = item.strip().split(",")[1]
+#                             with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_below_23A.csv", "a") as outfile_4:
+#                                 outfile_4.write(f"{protein_1},{fscore_dynamic},{dynamic_cutoff},{(int(cluster_2_tp)+int(cluster_1_tp))},clusters:1_2\n")
 
-            #4
+#             #4
 
-            if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance > 10):
-                if cluster_2_size > cluster_1_size:
-                    with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as outfile_5:
-                        outfile_5.write(f"{protein_1},{fscore_cluster_2},{cluster_2_size},{cluster_2_tp},clusters:2\n")                
+#             if ((cluster_2_tp != 0) and (cluster_1_tp != 0) and distance > 10):
+#                 if cluster_2_size > cluster_1_size:
+#                     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as outfile_5:
+#                         outfile_5.write(f"{protein_1},{fscore_cluster_2},{cluster_2_size},{cluster_2_tp},clusters:2\n")                
                 
-                if cluster_1_size > cluster_2_size:
-                    with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as outfile_6:
-                        outfile_6.write(f"{protein_1},{fscore_cluster_1},{cluster_1_size},{cluster_1_tp},clusters:1\n")                
+#                 if cluster_1_size > cluster_2_size:
+#                     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as outfile_6:
+#                         outfile_6.write(f"{protein_1},{fscore_cluster_1},{cluster_1_size},{cluster_1_tp},clusters:1\n")                
 
-                if cluster_1_size == cluster_2_size:
-                    if cluster_1_tp > cluster_2_tp:
-                        with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as outfile_7:
-                            outfile_7.write(f"{protein_1},{fscore_cluster_1},{cluster_1_size},{cluster_1_tp},clusters:1\n")
-                    if cluster_2_tp > cluster_1_tp:
-                        with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as outfile_8:
-                            outfile_8.write(f"{protein_1},{fscore_cluster_2},{cluster_2_size},{cluster_2_tp},clusters:2\n")                
+#                 if cluster_1_size == cluster_2_size:
+#                     if cluster_1_tp > cluster_2_tp:
+#                         with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as outfile_7:
+#                             outfile_7.write(f"{protein_1},{fscore_cluster_1},{cluster_1_size},{cluster_1_tp},clusters:1\n")
+#                     if cluster_2_tp > cluster_1_tp:
+#                         with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv", "a") as outfile_8:
+#                             outfile_8.write(f"{protein_1},{fscore_cluster_2},{cluster_2_size},{cluster_2_tp},clusters:2\n")                
                 
                 
-    filenames = [f'/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv', f'/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_below_23A.csv', f'/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/only_one_cluster_nonzero_tp.csv']
-    with open(f'/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/summary_file.csv', 'w') as outfile:
-        for fname in filenames:
-            with open(fname) as infile:
-                for line in infile:
-                    outfile.write(line)
-    total_tp = 0
-    total_predicted = 0
-    total_annotated = 0
-    with open (f'/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/summary_file.csv') as infile_3:
-        for line_3 in infile_3:
-            protein_3 = line_3.strip().split(",")[0]
-            tp = int(line_3.strip().split(",")[3])
-            total_tp = total_tp + tp
-            predicted = int(line_3.strip().split(",")[2])
-            total_predicted = total_predicted + predicted
-    with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/ispred/unbound_ispred_fscores.txt") as infile_4:
-        for line_4 in infile_4:
-            annotated = int(line_4.strip().split(",")[1])
-            total_annotated = annotated + total_annotated
+#     filenames = [f'/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_above_23A.csv', f'/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/both_clusters_nonzero_tp_below_23A.csv', f'/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/only_one_cluster_nonzero_tp.csv']
+#     with open(f'/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/summary_file.csv', 'w') as outfile:
+#         for fname in filenames:
+#             with open(fname) as infile:
+#                 for line in infile:
+#                     outfile.write(line)
+#     total_tp = 0
+#     total_predicted = 0
+#     total_annotated = 0
+#     with open (f'/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/summary_file.csv') as infile_3:
+#         for line_3 in infile_3:
+#             protein_3 = line_3.strip().split(",")[0]
+#             tp = int(line_3.strip().split(",")[3])
+#             total_tp = total_tp + tp
+#             predicted = int(line_3.strip().split(",")[2])
+#             total_predicted = total_predicted + predicted
+#     with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/detailed_individual_method_data/ispred/unbound_ispred_fscores.txt") as infile_4:
+#         for line_4 in infile_4:
+#             annotated = int(line_4.strip().split(",")[1])
+#             total_annotated = annotated + total_annotated
             
-    Fn = int(total_annotated) - int(total_tp)
-    Fp = int(total_predicted) - int(total_tp)
-    bottom_half= float(total_tp + (.5*Fn) +(Fp*.5))
-    global_fscore = round((total_tp/bottom_half),4)
+#     Fn = int(total_annotated) - int(total_tp)
+#     Fp = int(total_predicted) - int(total_tp)
+#     bottom_half= float(total_tp + (.5*Fn) +(Fp*.5))
+#     global_fscore = round((total_tp/bottom_half),4)
 
 
 
-#8
-    total_fscore = 0
-    num_proteins = 0
-    with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/summary_file.csv") as infile_1:
-        for line_1 in infile_1:
-            fscore_per = float(line_1.strip().split(",")[1])
-            num_proteins = num_proteins + 1
-            total_fscore = total_fscore + fscore_per
-    with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv") as infile_2:
-        for line_2 in infile_2:
-            num_proteins = num_proteins + 1
-    print("avg fscore is: " + str(round(total_fscore/num_proteins,4)) + " for " + str(num_proteins) +" proteins")
+# #8
+#     total_fscore = 0
+#     num_proteins = 0
+#     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/summary_file.csv") as infile_1:
+#         for line_1 in infile_1:
+#             fscore_per = float(line_1.strip().split(",")[1])
+#             num_proteins = num_proteins + 1
+#             total_fscore = total_fscore + fscore_per
+#     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv") as infile_2:
+#         for line_2 in infile_2:
+#             num_proteins = num_proteins + 1
+#     print("avg fscore is: " + str(round(total_fscore/num_proteins,4)) + " for " + str(num_proteins) +" proteins")
 
 
 
 
-#9
+# #9
 
 
-    from numpy import sqrt
+#     from numpy import sqrt
 
-    mcc_tot = 0
-    i = 0
-    with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/summary_file.csv") as infile_1:
-        for line_1 in infile_1:
-            i = i+1
-            protein = line_1.strip().split(",")[0]
-            total_predicted = line_1.strip().split(",")[2]
-            TP = int(line_1.strip().split(",")[3])
-            with open (cutoff_path) as infile_2:
-                for line_2 in infile_2:
-                    protein_1 = line_2.strip().split(",")[0]
-                    if protein == protein_1:
-                        N = int(line_2.strip().split(",")[3])
-                        threshhold = int(line_2.strip().split(",")[2])
-                        with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/protein_size_length/size_distribution_unbound.csv") as infile_3:
-                            for line_3 in infile_3:
-                                protein_2 = line_3.strip().split(",")[0]
-                                if protein_2 == protein_1:
-                                    total_res = int(line_3.strip().split(",")[1])
-                                    neg = total_res - threshhold
-                                    FP = int(total_predicted) - int(TP)
-                                    FN = N - TP
-                                    TN = neg - FN
+#     mcc_tot = 0
+#     i = 0
+#     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/summary_file.csv") as infile_1:
+#         for line_1 in infile_1:
+#             i = i+1
+#             protein = line_1.strip().split(",")[0]
+#             total_predicted = line_1.strip().split(",")[2]
+#             TP = int(line_1.strip().split(",")[3])
+#             with open (cutoff_path) as infile_2:
+#                 for line_2 in infile_2:
+#                     protein_1 = line_2.strip().split(",")[0]
+#                     if protein == protein_1:
+#                         N = int(line_2.strip().split(",")[3])
+#                         threshhold = int(line_2.strip().split(",")[2])
+#                         with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/protein_size_length/size_distribution_unbound.csv") as infile_3:
+#                             for line_3 in infile_3:
+#                                 protein_2 = line_3.strip().split(",")[0]
+#                                 if protein_2 == protein_1:
+#                                     total_res = int(line_3.strip().split(",")[1])
+#                                     neg = total_res - threshhold
+#                                     FP = int(total_predicted) - int(TP)
+#                                     FN = N - TP
+#                                     TN = neg - FN
                         
 
-                                    MCC_num = (TP * TN) - (FP * FN)
-                                    mcc_denom = sqrt((TP + FP) * (TP + FN)  * (TN + FP) * (TN + FN))
-                                    mcc = MCC_num / mcc_denom
-                                    mcc_tot = mcc_tot + mcc
+#                                     MCC_num = (TP * TN) - (FP * FN)
+#                                     mcc_denom = sqrt((TP + FP) * (TP + FN)  * (TN + FP) * (TN + FN))
+#                                     mcc = MCC_num / mcc_denom
+#                                     mcc_tot = mcc_tot + mcc
 
                                     
-    #do for zero_tp...
-    with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv", "a") as test1:
-        test1.write("")
-    with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv") as infile_a:
-        for line_a in infile_a:
-            i = i+1
-            protein_a = line_a.strip().split(",")[0]
-            total_predicted_a = int(line_a.strip().split(",")[2]) + int(line_a.strip().split(",")[5])
-            TP_a = 0
-            with open (cutoff_path) as infile_b:
-                for line_b in infile_b:
-                    protein_b = line_b.strip().split(",")[0]
-                    if protein_a == protein_b:
-                        N_a = int(line_b.strip().split(",")[3])
-                        threshhold_a = int(line_b.strip().split(",")[2])
-                        with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/protein_size_length/size_distribution_unbound.csv") as infile_c:
-                            for line_c in infile_c:
-                                protein_c = line_c.strip().split(",")[0]
-                                if protein_c == protein_b:
-                                    total_res_a = int(line_c.strip().split(",")[1])
-                                    neg_a = total_res_a - threshhold_a
-                                    FP_a = int(total_predicted_a) - int(TP_a)
-                                    FN_a = N_a - TP_a
-                                    TN_a = neg_a - FN_a
+#     #do for zero_tp...
+#     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv", "a") as test1:
+#         test1.write("")
+#     with open (f"/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/clustering_analysis/1_script_attempt_unbound/data_unbound/{predictor}/zero_tp_both_clusters.csv") as infile_a:
+#         for line_a in infile_a:
+#             i = i+1
+#             protein_a = line_a.strip().split(",")[0]
+#             total_predicted_a = int(line_a.strip().split(",")[2]) + int(line_a.strip().split(",")[5])
+#             TP_a = 0
+#             with open (cutoff_path) as infile_b:
+#                 for line_b in infile_b:
+#                     protein_b = line_b.strip().split(",")[0]
+#                     if protein_a == protein_b:
+#                         N_a = int(line_b.strip().split(",")[3])
+#                         threshhold_a = int(line_b.strip().split(",")[2])
+#                         with open ("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/protein_size_length/size_distribution_unbound.csv") as infile_c:
+#                             for line_c in infile_c:
+#                                 protein_c = line_c.strip().split(",")[0]
+#                                 if protein_c == protein_b:
+#                                     total_res_a = int(line_c.strip().split(",")[1])
+#                                     neg_a = total_res_a - threshhold_a
+#                                     FP_a = int(total_predicted_a) - int(TP_a)
+#                                     FN_a = N_a - TP_a
+#                                     TN_a = neg_a - FN_a
                         
 
-                                    MCC_num_a = (TP_a * TN_a) - (FP_a * FN_a)
-                                    mcc_denom_a = sqrt((TP_a + FP_a) * (TP_a + FN_a)  * (TN_a + FP_a) * (TN_a + FN_a))
-                                    mcc_a = MCC_num_a / mcc_denom_a
-                                    mcc_tot = mcc_tot + mcc_a
-    mcc_final = mcc_tot/i
-    with open (f"/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/{output_input}/clustering_results.txt", "a") as f1:
-        f1.write(f"{predictor},{str(round(total_fscore/num_proteins,4))},{mcc_final},{num_proteins}\n")
+#                                     MCC_num_a = (TP_a * TN_a) - (FP_a * FN_a)
+#                                     mcc_denom_a = sqrt((TP_a + FP_a) * (TP_a + FN_a)  * (TN_a + FP_a) * (TN_a + FN_a))
+#                                     mcc_a = MCC_num_a / mcc_denom_a
+#                                     mcc_tot = mcc_tot + mcc_a
+#     mcc_final = mcc_tot/i
+#     with open (f"/Users/moshe/Desktop/Research_MetaDPI/MetaDPIv2-main/metadpi/output/{output_input}/clustering_results.txt", "a") as f1:
+#         f1.write(f"{predictor},{str(round(total_fscore/num_proteins,4))},{mcc_final},{num_proteins}\n")

@@ -2,7 +2,6 @@
 162P.txt
 165P.txt
 164P.txt
-71P.txt
 238P.txt
 220P.txt
 237P.txt

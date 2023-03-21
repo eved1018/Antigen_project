@@ -1,6 +1,3 @@
-177P.txt
-172P.txt
-173P.txt
 142P.txt
 -1P.txt
 -2P.txt

@@ -5,13 +5,5 @@
 11P.txt
 9P.txt
 8P.txt
-4P.txt
 40P.txt
-6P.txt
-3P.txt
-87P.txt
-21P.txt
-23P.txt
-22P.txt
 27P.txt
-25P.txt

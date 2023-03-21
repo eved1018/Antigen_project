@@ -1,0 +1,2 @@
+>2OSL_3|Chains E[auth P], F[auth Q]|B-lymphocyte antigen CD20|Homo sapiens (9606)
+NIYNCEPANPSEKNSPSTQYCYSIQ

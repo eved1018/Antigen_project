@@ -1,0 +1,2 @@
+>2GSI_3|Chains I[auth W], J[auth X], K[auth Y], L[auth Z]|Thermonuclease|null
+TKHPKKGVEKY

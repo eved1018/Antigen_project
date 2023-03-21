@@ -1,0 +1,2 @@
+>5DMG_3|Chains G[auth P], H[auth X], I[auth Z]|Microtubule-associated protein|Homo sapiens (9606)
+SIDMVDSPQLATLAD

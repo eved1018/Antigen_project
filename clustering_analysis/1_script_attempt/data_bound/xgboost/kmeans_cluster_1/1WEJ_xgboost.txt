@@ -1,7 +1,5 @@
 100P.txt
 103P.txt
-13P.txt
-10P.txt
 39P.txt
 62P.txt
 61P.txt

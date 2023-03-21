@@ -1,9 +1,7 @@
 317P.txt
 261P.txt
-260P.txt
 310P.txt
 305P.txt
-259P.txt
 313P.txt
 215P.txt
 322P.txt

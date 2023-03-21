@@ -1,4 +1,4 @@
-,sppider_fscore,sppider_mcc,ispred_fscore,ispred_mcc,dockpred_fscore,dockpred_mcc,logisticregresion_fscore,logisticregresion_mcc,linearregression_fscore,linearregression_mcc,randomforest_fscore,randomforest_mcc,xgboost_fscore,xgboost_mcc,,,,,,,,,,,,,,
+protein,sppider_fscore,sppider_mcc,ispred_fscore,ispred_mcc,dockpred_fscore,dockpred_mcc,logisticregresion_fscore,logisticregresion_mcc,linearregression_fscore,linearregression_mcc,randomforest_fscore,randomforest_mcc,xgboost_fscore,xgboost_mcc,,,,,,,,,,,,,,
 4JR9,0.047619048,-0.037116611,0.476190476,0.487818318,0,-0.095442714,0.380952381,0.371166112,0.285714286,0.254513905,0.428571429,0.429492215,0.380952381,0.371166112,,,,,,,,,,,,,,
 2VXQ,0.222222222,0.063151381,0.222222222,0.063151381,0.222222222,0.063151381,0.277777778,0.134475295,0.222222222,0.063151381,0.166666667,-0.008172532,0.222222222,0.063151381,,,,,,,,,,,,,,
 1ORS,0.27027027,0.220709062,0.054054054,-0.058381107,0.054054054,-0.058381107,0.054054054,-0.058381107,0.054054054,-0.058381107,0.108108108,0.011391435,0.432432432,0.430026688,,,,,,,,,,,,,,
@@ -15,7 +15,7 @@
 1WEJ,0.228571429,0.139335867,0.228571429,0.139335867,0.342857143,0.281989255,0.342857143,0.281989255,0.285714286,0.210662561,0.342857143,0.281989255,0.4,0.353315948,,,,,,,,,,,,,,
 3LIZ,0.113207547,0.040918486,0.301886792,0.250562578,0.113207547,0.040918486,0.264150943,0.20863376,0.264150943,0.20863376,0.226415094,0.166704941,0.264150943,0.20863376,,,,,,,,,,,,,,
 1E6J,0.216216216,0.131117288,0.432432432,0.395123719,0.378378378,0.329122111,0.378378378,0.329122111,0.378378378,0.329122111,0.324324324,0.263120503,0.378378378,0.329122111,,,,,,,,,,,,,,
-"pvalue when compared to XGBoost, respectively for F1/MCC distributions",0.005,0.001,0.046,0.017,0.005,0.006,,,,,,,,,,,,,,,,,,,,,,
+"pvalue when compared to XGBoost, respectively for F1/MCC distributions",0.005,0.001,0.046,0.017,0.005,0.006,0.048,0.15,0.042,0.012,0.049,0.048,,,,,,,,,,,,,,,,
 ,sppider_fscore,,sppider_mcc,,ispred_fscore,,ispred_mcc,,dockpred_fscore,,dockpred_mcc,,logisticregresion_fscore,,logisticregresion_mcc,,linearregression_fscore,,linearregression_mcc,,randomforest_fscore,,randomforest_mcc,,xgboost_fscore,,xgboost_mcc,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 ,Mean,0.151658784,Mean,0.040419074,Mean,0.192347696,Mean,0.085533909,Mean,0.144182386,Mean,0.032462917,Mean,0.1956122,Mean,0.095261205,Mean,0.182516961,Mean,0.078881453,Mean,0.204431528,Mean,0.105547411,Mean,0.334521665,Mean,0.263782984

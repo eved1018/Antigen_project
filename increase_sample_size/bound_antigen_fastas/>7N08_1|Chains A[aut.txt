@@ -1,0 +1,2 @@
+>7N08_1|Chains A[auth E], C[auth F], D[auth G]|HIV-1 gp41 immunodominant region|HIV-1 06TG.HT008 (587638)
+WGSSGKLISTTAVPW

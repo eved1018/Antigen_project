@@ -5,12 +5,15 @@ delete all
     select ann, resi 19+22+23+24+27+102+103+116+117+118+119+120+121+124+125
     indicate bycalpha ann
     create annotated, indicate
+
     select pred, resi ['111+113+109+33+47+46+112+35+30+106+45+49+50+51+114+110+34+116+31+118+48+115']
     indicate bycalpha pred
     create pred_res, indicate
+
     show sphere, annotated
     color pink, annotated
     set sphere_transparency, 0.5,annotated
+    
     show sphere, pred_res
     set sphere_scale,0.5,pred_res
     color green, pred_res

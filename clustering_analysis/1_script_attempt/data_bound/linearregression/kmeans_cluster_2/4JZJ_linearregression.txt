@@ -5,6 +5,9 @@
 177P.txt
 200P.txt
 203P.txt
+71P.txt
+198P.txt
+72P.txt
 178P.txt
 233P.txt
 280P.txt

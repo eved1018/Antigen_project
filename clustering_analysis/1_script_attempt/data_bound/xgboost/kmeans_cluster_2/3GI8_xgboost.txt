@@ -1,13 +1,10 @@
-16P.txt
 310P.txt
 311P.txt
 305P.txt
 10P.txt
-138P.txt
 11P.txt
 413P.txt
 216P.txt
-149P.txt
 5P.txt
 4P.txt
 223P.txt
@@ -17,6 +14,5 @@
 2P.txt
 1P.txt
 218P.txt
-136P.txt
 309P.txt
 318P.txt

@@ -1,6 +1,5 @@
 148P.txt
 213P.txt
-82P.txt
 150P.txt
 151P.txt
 134P.txt

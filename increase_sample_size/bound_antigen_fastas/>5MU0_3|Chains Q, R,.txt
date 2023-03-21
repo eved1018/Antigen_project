@@ -1,0 +1,2 @@
+>5MU0_3|Chains Q, R, S, T, U, V, W, X|IA03 peptide containing the citrullinated C1 epitope of collagen type II,Collagen alpha-1(II) chain,IA03 peptide containing the citrullinated C1 epitope of collagen type II|Mus musculus (10090)
+GPPGARGLTGRPGDAGPP

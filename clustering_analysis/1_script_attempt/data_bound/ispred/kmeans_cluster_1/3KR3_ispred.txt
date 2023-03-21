@@ -1,8 +1,6 @@
-10P.txt
 38P.txt
 49P.txt
 48P.txt
-9P.txt
 40P.txt
 6P.txt
 41P.txt

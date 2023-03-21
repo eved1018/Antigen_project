@@ -1,0 +1,2 @@
+>6CO3_3|Chain C[auth Q]|ALA-GLU-PHE-ARG-HIS-ASP|Homo sapiens (9606)
+DAEFRHDSGYE

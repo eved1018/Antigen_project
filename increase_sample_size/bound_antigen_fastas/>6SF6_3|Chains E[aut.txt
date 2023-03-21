@@ -1,0 +1,2 @@
+>6SF6_3|Chains E[auth C], F[auth D]|P6 epitope of cartilage oligomeric matrix protein (COMP)|Rattus norvegicus (10116)
+PSPCHEKADCILERDGSRS

@@ -1,15 +1,17 @@
 delete all 
-                    fetch 4KXI.A
+                    fetch 4DVV.A
                     color blue 
                     set cartoon_transparency,0.75
-                    select ann, resi 19+22+23+24+27+102+103+116+117+118+119+120+121+124+125
+                    select ann, resi 122+124+278+279+280+281+282+365+366+367+368+370+371+425+427+429+431+432+455+456+457+458+459+460+462+469+473+474+476+480
                     indicate bycalpha ann
                     create annotated, indicate
-                    select pred, resi 100+101+103+102+62+74+48+71+73+47+21
+
+
+                    select pred, resi 458+459+367+208+432+368+425+437+423+436+281+122+279+457+278+326
                     indicate bycalpha pred
                     create pred_res, indicate
 
-                    select pred_2, resi 114+117+116+106+112+113+5+34+23+22+33+118+119
+                    select pred_2, resi 107+76+77+75+74+58+71+73+72+220+221+51+78+52+53+491
                     indicate bycalpha pred_2
                     create pred_res_2, indicate
                     
@@ -38,5 +40,5 @@ delete all
                     zoom complete=1
                     bg_color white 
                     set ray_opaque_background, 1
-                    png /Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/multiple_epitope_work/results/1A2Y/1A2Y_xgboost.png,width=900, height=900,dpi = 350,ray=1
+                    png /Users/moshe/Downloads/4JPW_4DVV.png,width=900, height=900,dpi = 350,ray=1
                     quit

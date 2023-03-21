@@ -1,0 +1,2 @@
+>5MV4_3|Chains C[auth E], F[auth H], I[auth K], L[auth N], O[auth Q], R[auth T], U[auth W], X|synthetic peptide containing the citrullinated collagen type II epitope CII616-639,Collagen alpha-1(II) chain,synthetic peptide containing the citrullinated collagen type II epitope CII616-639|Mus musculus (10090)
+GPPGPPGPPGPPGPPGARGAPGERGETGPPGPAGFAGPPGPPGPPG

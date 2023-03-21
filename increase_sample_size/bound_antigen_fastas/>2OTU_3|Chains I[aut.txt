@@ -1,0 +1,2 @@
+>2OTU_3|Chains I[auth P], J[auth Q], K[auth R], L[auth S]|peptide antigen|null
+QQQQQQQQQQG

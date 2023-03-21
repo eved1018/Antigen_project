@@ -4,9 +4,6 @@
 272P.txt
 70P.txt
 73P.txt
-166P.txt
-167P.txt
-56P.txt
 83P.txt
 82P.txt
 812P.txt

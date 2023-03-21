@@ -1,0 +1,2 @@
+>7RLY_1|Chains A[auth P], H[auth Q], I[auth R]|peptide from Circumsporozoite protein variant VK210|Plasmodium vivax (5855)
+DRAAGQPAGDRADGQPA

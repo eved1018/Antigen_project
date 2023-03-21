@@ -5,9 +5,6 @@
 71P.txt
 73P.txt
 81P.txt
-42P.txt
-40P.txt
 82P.txt
-41P.txt
 86P.txt
 84P.txt

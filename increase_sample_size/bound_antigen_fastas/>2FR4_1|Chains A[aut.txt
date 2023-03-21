@@ -1,0 +1,2 @@
+>2FR4_1|Chains A[auth M], B[auth N]|5'-D(*CP*TP*GP*CP*CP*TP*TP*CP*AP*G)-3'|null
+CTGCCTTCAG

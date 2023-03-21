@@ -2,7 +2,6 @@
 14P.txt
 16P.txt
 12P.txt
-62P.txt
-23P.txt
+10P.txt
+9P.txt
 19P.txt
-24P.txt

@@ -1,9 +1,5 @@
 28P.txt
-62P.txt
 49P.txt
-61P.txt
-58P.txt
-59P.txt
 45P.txt
 44P.txt
 26P.txt

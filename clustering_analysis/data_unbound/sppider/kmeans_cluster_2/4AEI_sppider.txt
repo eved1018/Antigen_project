@@ -1,8 +1,0 @@
-12P.txt
-10P.txt
-63P.txt
-61P.txt
-60P.txt
-64P.txt
-9P.txt
-42P.txt

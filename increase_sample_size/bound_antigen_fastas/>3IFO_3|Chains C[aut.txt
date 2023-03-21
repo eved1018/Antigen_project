@@ -1,0 +1,2 @@
+>3IFO_3|Chains C[auth P], F[auth Q]|Amyloid beta A4 protein|HOMO SAPIENS (9606)
+DAEFRHD

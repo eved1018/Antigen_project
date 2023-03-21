@@ -1,0 +1,2 @@
+>7UM3_3|Chains E[auth A], F[auth B]|D1 domain loop peptide from Lymphocyte activation gene 3 protein|Homo sapiens (9606)
+PGPHPAAPSSWGPRPR

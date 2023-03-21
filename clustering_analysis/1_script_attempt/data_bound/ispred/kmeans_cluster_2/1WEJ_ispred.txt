@@ -5,5 +5,4 @@
 11P.txt
 80P.txt
 81P.txt
-45P.txt
 27P.txt

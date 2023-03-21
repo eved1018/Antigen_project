@@ -1,0 +1,2 @@
+>2OK0_1|Chain A[auth D]|5'-D(*TP*C)-3'|
+TC

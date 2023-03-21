@@ -1,0 +1,2 @@
+>6PEC_3|Chain C[auth A]|HIV-1 fusion peptide residue 512-519|Human immunodeficiency virus 1 (11676)
+AVGIGAVF

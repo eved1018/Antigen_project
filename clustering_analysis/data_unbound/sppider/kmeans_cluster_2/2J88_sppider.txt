@@ -1,7 +1,0 @@
-10P.txt
-11P.txt
-34P.txt
-37P.txt
-330P.txt
-33P.txt
-326P.txt

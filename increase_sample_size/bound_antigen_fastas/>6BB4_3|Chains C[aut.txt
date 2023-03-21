@@ -1,0 +1,2 @@
+>6BB4_3|Chains C[auth P], F[auth Q], I[auth R]|Microtubule-associated protein tau|Homo sapiens (9606)
+TDHGAEIVYKSPVVSGDTSPRHL

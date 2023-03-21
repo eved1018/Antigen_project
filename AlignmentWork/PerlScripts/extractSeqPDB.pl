@@ -141,7 +141,7 @@ sub writeSeq{
   #changed here
   my $cvs_as_string = $csv->string();
   #print "$cvs_as_string\n";
-  my $outfile = "/Users/moshe/Desktop/Research_Antigen/AlignmentWork/unbound_map_files/${name}_map.csv"; #<- adjust the output path here
+  my $outfile = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cv_unbound_sets/unbound_map/${name}_map.csv"; #<- adjust the output path here
   print "$outfile\n";
   open(my $fh, '>', $outfile) or die "Unable to open file '$outfile' for writing: $!";
   print $fh $cvs_as_string;

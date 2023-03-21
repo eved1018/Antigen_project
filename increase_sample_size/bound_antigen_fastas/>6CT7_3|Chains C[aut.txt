@@ -1,0 +1,2 @@
+>6CT7_3|Chains C[auth S], F[auth T]|ACE-MET-ASP-VAL-PHE-MET-LYS-GLY-LEU-SER-LYS|Homo sapiens (9606)
+XMDVFMKGLSK

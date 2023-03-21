@@ -13,7 +13,7 @@ delete all
     set sphere_transparency, 0.5,annotated
     show sphere, pred_res
     set sphere_scale,0.5,pred_res
-    color green, pred_res
+    color black, pred_res
     set sphere_transparency,0,pred_res
     set cartoon_transparency,1,pred_res
     remove resn hoh

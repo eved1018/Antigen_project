@@ -1,0 +1,2 @@
+>5MU2_3|Chains Q, R, S, T, U, V, W, X|synthetic peptide containing the CII583-591 epitope of collagen type II|Mus musculus (10090)
+GPPGPPGPPGPPGGRGLTGPIGPPGPPGPP
