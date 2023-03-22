@@ -1,7 +1,0 @@
-115P.txt
-117P.txt
-111P.txt
-201P.txt
-146P.txt
-123P.txt
-118P.txt

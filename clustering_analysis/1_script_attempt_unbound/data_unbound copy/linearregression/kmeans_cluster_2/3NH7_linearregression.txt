@@ -1,7 +1,0 @@
-96P.txt
-120P.txt
-123P.txt
-127P.txt
-118P.txt
-124P.txt
-119P.txt
