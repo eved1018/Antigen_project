@@ -7,12 +7,13 @@ import pandas as pd
 from pathlib import Path
 import sys
 
-folder_chain = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cv_unbound_sets/annotatedresidues")
+
+folder_chain = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cv_unbound_sets/alignment/unbound_annotations")
 folder_pred = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/revised_multiple_epitopes_3_16/single_epitope_clustering/xgboost_clusters/kmeans_cluster_1")
 folder_pred_2 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/revised_multiple_epitopes_3_16/single_epitope_clustering/xgboost_clusters/kmeans_cluster_2")
 folder_pred_3 = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/revised_multiple_epitopes_3_16/single_epitope_clustering/xgboost_clusters/kmeans_cluster_3")
 
-folder_pdb_name = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cv_unbound_sets/annotatedresidues/")
+folder_pdb = Path("/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cv_unbound_sets/alignment/unbound_annotations")
 
 results_folder = "/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/revised_multiple_epitopes_3_16/single_epitope_clustering/results_images"
 list_unbound_proteins = []
@@ -46,13 +47,12 @@ for item in list_unbound_proteins:
                     cluster_3 = line_3.strip().split("P")[0]
                     cluster3.append(cluster_3)
 ####################### fix this part:
-
 ###output: /Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cv_unbound_sets/annotatedresidues
-    for file_pdb in folder_pdb_name.iterdir():
-        print(folder_pdb_name)
-        if item in file_pdb.name:
-            unbound_chain = file_pdb.name[5:6]
-            unbound_protein = file_pdb.name[:4]
+    for file_pdb in folder_pdb.iterdir():
+        
+        if item in (str(file_pdb)):
+            print(item)
+            unbound_protein = item
             for file_ann in folder_chain.iterdir():
                 if unbound_protein in file_ann.name:
                     list_ann = []
@@ -65,7 +65,7 @@ for item in list_unbound_proteins:
                     if len(cluster3) != 0:
                         filename = f"{results_folder}/images/{unbound_protein}_xgboost.png"
                         total_script=f"""delete all 
-                        fetch {unbound_protein}.{unbound_chain}
+                        fetch {unbound_protein}.A
                         color blue 
                         set cartoon_transparency,0.75
                         select ann, resi {"+".join(list_ann)}
@@ -128,7 +128,7 @@ for item in list_unbound_proteins:
                     if len(cluster3) ==0:
                         filename = f"{results_folder}/images/{unbound_protein}_xgboost.png"
                         total_script=f"""delete all 
-                        fetch {unbound_protein}.{unbound_chain}
+                        fetch {unbound_protein}.A
                         color blue 
                         set cartoon_transparency,0.75
                         select ann, resi {"+".join(list_ann)}
@@ -173,7 +173,7 @@ for item in list_unbound_proteins:
                         quit"""
 
                         filename_2 = f"{unbound_protein}_xgboost"
-                        file_path = f'{results_folder}/scripts/unbound_protein.pml'
+                        file_path = f'{results_folder}/scripts/{item}.pml'
                         with open(file_path, 'w') as f:
                             f.write(total_script)
                         cmd = f"/Applications/PyMOL.app/Contents/MacOS/PyMOL -c -q -Q {file_path}" # <- add in location to pymol ex. "~/Application/"
