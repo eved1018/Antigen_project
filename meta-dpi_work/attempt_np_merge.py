@@ -3,7 +3,7 @@ import pandas as pd
 
 df_1 = pd.DataFrame(pd.read_csv('/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cv_unbound_sets/results_dockpred/metappisp_data_all.txt'), columns=['residue', 'metappisp', 'annotated'])
 df_2 = pd.DataFrame(pd.read_csv('/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cv_unbound_sets/results_dockpred/vorffip_data_all.txt'), columns=['residue', 'vorffip', 'annotated'])
-df_3 = pd.DataFrame(pd.read_csv('/Users/moshe/Downloads/ISPIP_ready_newprotein_Discotope_data.txt'), columns=['residue', 'discotope', 'annotated'])
+df_3 = pd.DataFrame(pd.read_csv('/Users/moshe/Desktop/Research_Antigen/antigen_project_updated/Antigen_project/cv_unbound_sets/results_dockpred/ISPIPreadydiscotope3.0.txt'), columns=['residue', 'discotope3', 'annotated'])
 
 
 df_4 = pd.merge(df_1, df_2, on = ['residue', 'annotated'], how = 'left')

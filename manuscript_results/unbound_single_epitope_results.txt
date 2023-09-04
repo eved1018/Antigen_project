@@ -1,0 +1,5 @@
+method,fscore_stdev,mcc_stdev,pvalue_compared_to_xgboost
+SPPIDER,0.122±0.136,0.003±0.149,0.000989
+ISPRED,0.194±0.183,0.089±0.197,0.0315
+DockPred,0.168±0.144,0.054±0.166,0.0315(tested - ispred/dockpred - identifical pvalues compared to xgboost)
+XGBoost,0.315±0.175,0.236±0.178,N/A
